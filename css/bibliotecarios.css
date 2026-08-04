@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  padding: 20px; /*Desloca o que está no body*/
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to top right, #9b3b00, #ffc56d);
+  gap: 25px; /*Espaço entre as div e o input*/
+}
+
+.topo {
+  width: 100%;
+  max-width: 1000px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+p {
+  color: white;
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  text-align: center;
+}
+/*Cadastrar bibliotecário*/
+
+img {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+/* Campo de pesquisa */
+#pesquisaBibliotecarios {
+  order: 3;
+  width: 100%; /*Ocupa a largura total*/
+  max-width: 700px;
+  height: 3rem;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+/* Resultado */
+#resultado {
+  order: 4;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 400px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(68, 2, 2, 1);
+}
