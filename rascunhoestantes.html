@@ -9,12 +9,12 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Gerenciamento de Bibliotecários-PergByte</title>
+    <title>Gerenciamento de Estantes-PergByte</title>
     <link
       href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
       rel="stylesheet"
     />
-    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
@@ -125,7 +125,7 @@
         class="text-center fs-3 d-none d-md-inline w-100 ms-50 mt-3"
         id="sidebarToggle"
       >
-        Gerenciamento de Bibliotecários
+        Gerenciamento de Estantes
       </p>
       <!--Botão de três linhas-->
       <!-- Navbar Search-->
@@ -158,7 +158,7 @@
     </nav>
 
     <div class="d-block d-md-none text-center mt-5 pt-4">
-      <h1>Gerenciamento de Bibliotecários</h1>
+      <h1>Gerenciamento de Estantes</h1>
     </div>
 
     <div class="container py-5">
@@ -166,19 +166,12 @@
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoBibliotecariosLupa">
+            <span class="input-group-text" id="gerenciamentoEstantesLupa">
               <i class="fas fa-search"></i>
             </span>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Bibliotecários..."
-            />
+            <input type="text" class="form-control" placeholder="Estante..." />
 
-            <button
-              class="btn btn-warning fs-4 px-3"
-              id="adicionarBibliotecario"
-            >
+            <button class="btn btn-warning fs-4 px-3" id="adicionarEstante">
               <i
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +195,7 @@
       <!--Janelas-->
 
       <!--Janela que exibe as informações-->
-      <div class="modal" tabindex="-1" id="informacoesBibliotecario">
+      <div class="modal" tabindex="-1" id="informacoesEstante">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -215,13 +208,19 @@
               ></button>
             </div>
             <div class="modal-body">
-              <p>Bibliotecário: João Silva</p>
-              <p>Email: joãosilva@example.com</p>
-              <p>Nível: Bibliotecário Administrador</p>
-              <p>CPF: 000.000.000-00</p>
-              <p>Data de Admissão: 00/00/0000</p>
-              <p>Data de Egresso: 00/00/0000</p>
-              <p>Senha: ************</p>
+              <p>Estante: 1-C</p>
+
+              <p>
+                Livros Associados: Alice no País das Maravilhas, Dom Casmurro,
+                Jardim Secreto
+              </p>
+
+              <p>
+                Observações: Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Beatae ipsa commodi, non veniam ducimus incidunt
+                asperiores voluptate nisi laudantium ratione harum enim sit
+                reiciendis ut rem adipisci. Quibusdam, tempore officia.
+              </p>
             </div>
             <div class="modal-footer">
               <button
@@ -251,14 +250,21 @@
               ></button>
             </div>
             <div class="modal-body">
-              <p>Bibliotecário: João Silva</p>
-              <p>Email: joãosilva@example.com</p>
-              <p>Nível: Bibliotecário Administrador</p>
-              <p>CPF: 000.000.000-00</p>
-              <p>Data de Admissão: 00/00/0000</p>
-              <p>Data de Egresso: 00/00/0000</p>
-              <p>Senha: ************</p>
-              <h4>Você realmente deseja excluir este bibliotecário ?</h4>
+              <p>Estante: 1-C</p>
+
+              <p>
+                Livros Associados: Alice no País das Maravilhas, Dom Casmurro,
+                Jardim Secreto
+              </p>
+
+              <p>
+                Observações: Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Beatae ipsa commodi, non veniam ducimus incidunt
+                asperiores voluptate nisi laudantium ratione harum enim sit
+                reiciendis ut rem adipisci. Quibusdam, tempore officia.
+              </p>
+
+              <h4>Você realmente deseja excluir esta estante ?</h4>
             </div>
             <div class="modal-footer">
               <button
@@ -275,7 +281,7 @@
       </div>
 
       <!--Janela de edição-->
-      <div class="modal" tabindex="-1" id="modificarInformacoesBibliotecario">
+      <div class="modal" tabindex="-1" id="modificarInformacoesEstante">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -292,16 +298,16 @@
                 action="#"
                 target="_self"
                 method="post"
-                id="formularioEdicaoBibliotecario"
+                id="formularioEdicaoEstante"
               >
                 <fieldset>
                   <legend>Informações Pessoais</legend>
-                  <label for="formularioEdicaoBibliotecarioNome">Nome:</label>
-                  <input type="text" id="formularioEdicaoBibliotecariorNome" />
+                  <label for="formularioEdicaoLeitorNome">Nome:</label>
+                  <input type="text" id="formularioEdicaoLeitorNome" />
                   <label for="text">CPF:</label>
-                  <input type="text" id="formularioEdicaoBibliotecarioCPF" />
+                  <input type="text" id="formularioEdicaoLeitorCPF" />
                   <label for="">E-mail:</label>
-                  <input type="email" id="formularioEdicaoBibliotecarioEmail" />
+                  <input type="email" id="formularioEdicaoLeitorEmail" />
                 </fieldset>
                 <fieldset>
                   <legend>Conta</legend>
@@ -332,7 +338,7 @@
               class="card-body"
               id="resultadoPesquisa"
               data-bs-toggle="modal"
-              data-bs-target="#informacoesBibliotecario"
+              data-bs-target="#informacoesEstante"
             >
               <div class="border rounded p-3 mb-3">
                 <div
@@ -342,23 +348,26 @@
                   <img
                     class="rounded-circle"
                     alt="Imagem Usuário"
-                    src="../../../Downloads/Designer.png"
+                    src="../../Downloads/Designer.png"
                     width="110"
                     height="110"
                   />
 
                   <!-- Informações -->
                   <div class="flex-grow-1 d">
-                    <h5 class="mb-1">João Silva</h5>
-                    <p class="mb-0 text-muted">joao.silva@email.com</p>
+                    <h5 class="mb-1">1-C</h5>
+                    <p class="mb-0 text-muted">
+                      Livros Associados: Alice no País das Maravilhas, Dácrula,
+                      Dom Casmurro
+                    </p>
                   </div>
 
-                  <!-- Botões -->
-                  <div>
+                  <!--Botões-->
+                  <div class="d-flex flex-row gap-2">
                     <div
                       class="btn btn-success"
                       data-bs-toggle="modal"
-                      data-bs-target="#modificarInformacoesBibliotecario"
+                      data-bs-target="#modificarInformacoesEstante"
                     >
                       <i>
                         <svg
@@ -413,6 +422,6 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/scripts.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>

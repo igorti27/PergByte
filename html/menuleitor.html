@@ -1,11 +1,217 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu do Leitor-PergByte</title>
-    <link rel="stylesheet" type="text/css" href="../css/menuleitor.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Leitor-Menu-PergByte</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
+      rel="stylesheet"
+    />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
-  <script src="#"></script>
+  <body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+      <!-- Navbar Brand-->
+      <p class="navbar-brand ps-3 w-10">
+    
+        <svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 512 512"
+     width="48"
+     height="48"
+     fill="none" id="logoPergbyte">
+
+    <!-- Coroa esquerda -->
+    <path d="M120 350
+             C80 310 70 250 90 200
+             C110 150 140 120 180 100"
+          stroke="#3A5F0B"
+          stroke-width="12"
+          stroke-linecap="round"/>
+
+    <path d="M115 310 l-20 -10
+             M105 270 l-22 -6
+             M110 230 l-20 8
+             M130 190 l-16 15
+             M155 150 l-10 20"
+          stroke="#3A5F0B"
+          stroke-width="10"
+          stroke-linecap="round"/>
+
+    <!-- Coroa direita -->
+    <path d="M392 350
+             C432 310 442 250 422 200
+             C402 150 372 120 332 100"
+          stroke="#3A5F0B"
+          stroke-width="12"
+          stroke-linecap="round"/>
+
+    <path d="M397 310 l20 -10
+             M407 270 l22 -6
+             M402 230 l20 8
+             M382 190 l16 15
+             M357 150 l10 20"
+          stroke="#3A5F0B"
+          stroke-width="10"
+          stroke-linecap="round"/>
+
+    <!-- Livro -->
+    <path d="M150 180
+             Q200 160 256 180
+             L256 330
+             Q200 310 150 330 Z"
+          fill="#0B2545"/>
+
+    <path d="M362 180
+             Q312 160 256 180
+             L256 330
+             Q312 310 362 330 Z"
+          fill="#0B2545"/>
+
+    <!-- Páginas -->
+    <path d="M165 190
+             Q205 175 256 190
+             L256 315
+             Q205 300 165 315 Z"
+          fill="#F8F5F0"/>
+
+    <path d="M347 190
+             Q307 175 256 190
+             L256 315
+             Q307 300 347 315 Z"
+          fill="#F8F5F0"/>
+
+    <!-- Marcador -->
+    <rect x="246" y="175"
+          width="20"
+          height="110"
+          fill="#C9A227"/>
+
+    <path d="M246 285
+             L256 315
+             L266 285"
+          fill="#C9A227"/>
+
+</svg>
+ 
+        PergByte
+      </p>
+      <!-- Sidebar Toggle-->
+      <button
+        class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+        id="sidebarToggle"
+      >
+        <i class="fas fa-bars"></i>
+
+      </button> <!--Botão de três linhas-->
+      <!-- Navbar Search-->
+      
+      <!-- Navbar-->
+
+      <ul class="navbar-nav ms-auto me-3 me-lg-4"> <!--Imagem Perfil do Usuário-->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+
+            <i class="fas fa-user fa-fw"></i>
+          
+          </a>
+
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdown">
+
+            <li><a class="dropdown-item" href="#!">Sair</a></li>
+
+          </ul>
+        </li>
+      </ul><!--Imagem Perfil do Usuário-->
+      
+    </nav>
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+          <div class="sb-sidenav-menu">
+            <div class="nav">
+              <div class="sb-sidenav-menu-heading"></div>
+
+              <a
+                class="nav-link collapsed"
+                href="#"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsePages"
+                aria-expanded="false"
+                aria-controls="collapsePages"
+              > <!--Parte de Leitor-->
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-book-open"></i>
+                </div>
+                Meus Empréstimos
+                <div class="sb-sidenav-collapse-arrow">
+                  <i class="fas fa-angle-down"></i>
+                </div>
+              </a> <!--Parte de Leitor-->
+
+              <div 
+                class="collapse"
+                id="collapsePages"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#sidenavAccordion"
+              > <!--Opções de um Leitor-->
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="layout-static.html">
+                    Solicitar Agendamento
+                  </a>
+                  <a class="nav-link" href="layout-static.html">
+                    Empréstimos Atuais
+                  </a>
+                </nav>
+              </div> <!--Opções de um Leitor-->
+
+          <div class="sb-sidenav-footer d-flex flex-row gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+             <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+            </svg> 
+            <p>Sair</p>
+          </div> <!--Rodapé do menu lateral-->
+        </nav>
+      </div>
+
+      <div id="layoutSidenav_content"> <!--Conteúdo principal-->
+        <main class="container-fluid px-4 mt-5">
+           <div class="mb-4 w-100">
+             <input type="text" placeholder="Pesquisar livro..." class="form-control  m-auto" id="barraPesquisaLivro">
+           </div>
+           <div class="card" id="ResultadosLivros">
+              <div class="card-body">
+                <p>Nenhum Resultado</p>
+              </div>
+           </div>
+        </main>
+      </div>
+    </div>
+            
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/scripts.js"></script> <!--Funcionalidade do botão de três linhas-->
+    
+  </body>
 </html>
