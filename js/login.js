@@ -1,118 +1,186 @@
-let tentativasLogin = 0;
+const CHAVE_CONTAS = "pergByteContas";
+const CHAVE_SESSAO = "pergByteSessao";
 
-function logar() {
-  const campoCPF = document.getElementById("inputCPF").value;
-  const campoSenha = document.getElementById("inputSenha").value;
-
-  if (
-    camposVazios(campoCPF, campoSenha) ||
-    cpfInvalido(campoCPF) ||
-    senhaInvalida(campoSenha)
-  ) {
-    tentativasLogin++;
-
-    if (tentativasLogin >= 5) {
-      const botao = document.getElementById("botaoLogin");
-
-      botao.disabled = true;
-      const TEMPO_BLOQUEIO = 5 * 60 * 1000;
-
-      mostrarError("Muitas tentativas. Tente novamente, em 5 minutos");
-
-      setTimeout(() => {
-        botao.disabled = false;
-        tentativasLogin = 0;
-      }, TEMPO_BLOQUEIO);
-
-      return;
-    }
+function buscarContas() {
+  try {
+    return JSON.parse(localStorage.getItem(CHAVE_CONTAS) || "[]");
+  } catch {
+    return [];
   }
 }
 
-const msgGeral = "CPF ou Senha, inválidos!";
-
-function camposVazios(camp1, camp2) {
-  if (camp1.trim() === "" || camp2.trim() === "") {
-    const msg =
-      "Os campos CPF e Senha não podem ser vazios ou conter apenas espaços!";
-    mostrarError(msg);
-    return true;
-  } else {
-    return false;
-  }
+function salvarContas(contas) {
+  localStorage.setItem(CHAVE_CONTAS, JSON.stringify(contas));
 }
 
-function cpfInvalido(cpfInv) {
-  let cpfLimpo = cpfInv.replace(/\D/g, "");
+function mostrarMensagem(texto, tipo) {
+  const mensagem = document.getElementById("mensagem");
 
-  if (!/^\d{11}$/.test(cpfLimpo)) {
-    //Verifica se o CPF possui 11 números,se há apenas números,se não há espaços;
-    mostrarError(msgGeral);
-    return true;
-  } else if (/^(\d)\1{10}$/.test(cpfLimpo)) {
-    //Verifica se o CPF possui números repetidos em todos seus caracteres;
-    mostrarError(msgGeral);
-    return true;
-  } else if (!calcularCPF(cpfLimpo)) {
-    return true;
-  }
-
-  return false;
+  mensagem.textContent = texto;
+  mensagem.className = tipo;
 }
 
-function calcularCPF(cpfInp) {
-  let cpfLimpo = cpfInp.replace(/\D/g, "");
+function limparMensagem() {
+  const mensagem = document.getElementById("mensagem");
 
-  //Cálculo primeiro dígito
-  let soma = 0;
-
-  for (let i = 0; i < 9; i++) {
-    soma += Number(cpfLimpo[i]) * (10 - i);
-  }
-
-  let resto = soma % 11;
-
-  let digito1 = resto < 2 ? 0 : 11 - resto;
-
-  //Cálculo segundo dígito
-  soma = 0;
-
-  for (let i = 0; i < 10; i++) {
-    soma += Number(cpfLimpo[i]) * (11 - i);
-  }
-
-  resto = soma % 11;
-
-  let digito2 = resto < 2 ? 0 : 11 - resto;
-
-  if (Number(cpfLimpo[9]) === digito1 && Number(cpfLimpo[10]) === digito2) {
-    return true;
-  } else {
-    return false;
-  }
+  mensagem.textContent = "";
+  mensagem.className = "";
 }
 
-function senhaInvalida(senha) {
-  if (
-    senha.length < 6 ||
-    senha.length > 10 ||
-    !/[!@#$%^&*]/.test(senha) ||
-    !/[A-Z]/.test(senha) ||
-    !/[a-z]/.test(senha) ||
-    !/\d/.test(senha)
-  ) {
-    // Verifica se a senha possui um número de caracteres entre 6 e 10
-    // Se há letras maiúsculas, minúsculas e caracteres especiais
-    return true;
-  }
-  return false;
+function trocarFormulario(id, botao) {
+  document.querySelectorAll(".formulario").forEach(function (formulario) {
+    formulario.classList.remove("ativo");
+  });
+
+  document.querySelectorAll(".aba").forEach(function (aba) {
+    aba.classList.remove("ativa");
+  });
+
+  document.getElementById(id).classList.add("ativo");
+  botao.classList.add("ativa");
+
+  limparMensagem();
 }
 
-function mostrarError(mensagem) {
-  Toastify.info({
-    text: mensagem,
-    duration: 10000,
-    gravity: "bottom",
-    position: "center",
-  }).showToast();
+function cadastrar(event) {
+  event.preventDefault();
+
+  const formulario = event.target;
+
+  const nome = formulario.nome.value.trim();
+  const email = formulario.email.value.trim().toLowerCase();
+  const senha = formulario.senha.value;
+  const confirmacao = formulario.confirmacao.value;
+
+  if (nome.length < 3) {
+    mostrarMensagem("Digite seu nome completo.", "erro");
+
+    return;
+  }
+
+  if (senha.length < 6) {
+    mostrarMensagem("A senha precisa ter pelo menos 6 caracteres.", "erro");
+
+    return;
+  }
+
+  if (senha !== confirmacao) {
+    mostrarMensagem("A senha e a confirmação não são iguais.", "erro");
+
+    return;
+  }
+
+  const contas = buscarContas();
+
+  const emailJaCadastrado = contas.some(function (conta) {
+    return conta.email === email;
+  });
+
+  if (emailJaCadastrado) {
+    mostrarMensagem("Esse e-mail já está cadastrado.", "erro");
+
+    return;
+  }
+
+  contas.push({
+    nome: nome,
+    email: email,
+    senha: senha,
+  });
+
+  salvarContas(contas);
+  formulario.reset();
+
+  const botaoLogin = document.querySelectorAll(".aba")[0];
+
+  trocarFormulario("login", botaoLogin);
+
+  mostrarMensagem("Cadastro realizado. Agora faça seu login.", "sucesso");
+}
+
+function entrar(event) {
+  event.preventDefault();
+
+  const formulario = event.target;
+
+  const email = formulario.email.value.trim().toLowerCase();
+  const senha = formulario.senha.value;
+
+  const contaEncontrada = buscarContas().find(function (conta) {
+    return conta.email === email;
+  });
+
+  if (!contaEncontrada) {
+    mostrarMensagem("Não existe uma conta cadastrada com esse e-mail.", "erro");
+
+    return;
+  }
+
+  if (contaEncontrada.senha !== senha) {
+    mostrarMensagem("Senha incorreta. Tente novamente.", "erro");
+
+    return;
+  }
+
+  localStorage.setItem(
+    CHAVE_SESSAO,
+    JSON.stringify({
+      nome: contaEncontrada.nome,
+      email: contaEncontrada.email,
+    }),
+  );
+
+  mostrarMensagem("Login realizado com sucesso.", "sucesso");
+
+  setTimeout(function () {
+    window.location.href = "emprestimos.html";
+  }, 700);
+}
+
+function alterarSenha(event) {
+  event.preventDefault();
+
+  const formulario = event.target;
+
+  const email = formulario.email.value.trim().toLowerCase();
+  const senha = formulario.senha.value;
+  const confirmacao = formulario.confirmacao.value;
+
+  const contas = buscarContas();
+
+  const posicao = contas.findIndex(function (conta) {
+    return conta.email === email;
+  });
+
+  if (posicao === -1) {
+    mostrarMensagem("Não existe uma conta cadastrada com esse e-mail.", "erro");
+
+    return;
+  }
+
+  if (senha.length < 6) {
+    mostrarMensagem(
+      "A nova senha precisa ter pelo menos 6 caracteres.",
+      "erro",
+    );
+
+    return;
+  }
+
+  if (senha !== confirmacao) {
+    mostrarMensagem("A nova senha e a confirmação não são iguais.", "erro");
+
+    return;
+  }
+
+  contas[posicao].senha = senha;
+
+  salvarContas(contas);
+  formulario.reset();
+
+  const botaoLogin = document.querySelectorAll(".aba")[0];
+
+  trocarFormulario("login", botaoLogin);
+
+  mostrarMensagem("Senha alterada. Você já pode entrar.", "sucesso");
 }

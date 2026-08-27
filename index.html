@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PergByte</title>
+  </head>
+  <link rel="stylesheet" href="css/index.css" />
+  <body>
+    <main class="pagina">
+      <section class="lateral">
+        <div class="logo">
+          <span>P</span>
+          PergByte
+        </div>
+        <div class="apresentacao">
+          <p class="tag">SISTEMA DA BIBLIOTECA</p>
+
+          <h1>
+            Consulte e<br />
+            organize seus<br />
+            empréstimos.
+          </h1>
+
+          <p class="descricao">
+            Entre para visualizar os livros emprestados, renovar prazos e
+            solicitar novos agendamentos.
+          </p>
+
+          <ul class="vantagens">
+            <li>Consulta de empréstimos atuais</li>
+            <li>Renovação de prazo</li>
+            <li>Agendamento de retirada</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="area-formulario">
+        <div class="caixa">
+          <div class="abas">
+            <button
+              class="aba ativa"
+              type="button"
+              onclick="trocarFormulario('login', this)"
+            >
+              Entrar
+            </button>
+
+            <button
+              class="aba"
+              type="button"
+              onclick="trocarFormulario('cadastro', this)"
+            >
+              Cadastrar
+            </button>
+
+            <button
+              class="aba"
+              type="button"
+              onclick="trocarFormulario('recuperacao', this)"
+            >
+              Esqueci a senha
+            </button>
+          </div>
+
+          <section id="login" class="formulario ativo">
+            <div class="titulo">
+              <h2>Acessar o sistema</h2>
+              <p>Use uma conta cadastrada para entrar.</p>
+            </div>
+
+            <form onsubmit="entrar(event)">
+              <label>
+                E-mail
+
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="seuemail@exemplo.com"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+
+              <label>
+                Senha
+
+                <input
+                  name="senha"
+                  type="password"
+                  placeholder="Digite sua senha"
+                  minlength="6"
+                  autocomplete="current-password"
+                  required
+                />
+              </label>
+
+              <button class="principal" type="submit">Entrar</button>
+            </form>
+          </section>
+
+          <section id="cadastro" class="formulario">
+            <div class="titulo">
+              <h2>Criar uma conta</h2>
+              <p>Preencha todos os campos para se cadastrar.</p>
+            </div>
+
+            <form onsubmit="cadastrar(event)">
+              <label>
+                Nome completo
+
+                <input
+                  name="nome"
+                  type="text"
+                  placeholder="Digite seu nome completo"
+                  minlength="3"
+                  autocomplete="name"
+                  required
+                />
+              </label>
+
+              <label>
+                E-mail
+
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="seuemail@exemplo.com"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+
+              <label>
+                Senha
+
+                <input
+                  name="senha"
+                  type="password"
+                  placeholder="Mínimo de 6 caracteres"
+                  minlength="6"
+                  maxlength="10"
+                  autocomplete="new-password"
+                  required
+                />
+              </label>
+
+              <label>
+                Confirmar senha
+
+                <input
+                  name="confirmacao"
+                  type="password"
+                  placeholder="Digite a senha novamente"
+                  minlength="6"
+                  maxlength="10"
+                  autocomplete="new-password"
+                  required
+                />
+              </label>
+
+              <button class="principal" type="submit">Cadastrar</button>
+            </form>
+          </section>
+
+          <section id="recuperacao" class="formulario">
+            <div class="titulo">
+              <h2>Alterar senha</h2>
+              <p>Informe seu e-mail e escolha uma nova senha.</p>
+            </div>
+
+            <form onsubmit="alterarSenha(event)">
+              <label>
+                E-mail cadastrado
+
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="seuemail@exemplo.com"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+
+              <label>
+                Nova senha
+
+                <input
+                  name="senha"
+                  type="password"
+                  placeholder="Mínimo de 6 caracteres"
+                  minlength="6"
+                  maxlength="10"
+                  autocomplete="new-password"
+                  required
+                />
+              </label>
+
+              <label>
+                Confirmar nova senha
+
+                <input
+                  name="confirmacao"
+                  type="password"
+                  placeholder="Digite a nova senha novamente"
+                  minlength="6"
+                  maxlength="10"
+                  autocomplete="new-password"
+                  required
+                />
+              </label>
+
+              <button class="principal" type="submit">Alterar senha</button>
+            </form>
+          </section>
+
+          <p id="mensagem"></p>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="js/login.js"></script>
+</html>
