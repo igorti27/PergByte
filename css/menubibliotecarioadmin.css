@@ -1,123 +1,132 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+#imagemPerfilUsuario {
+  margin-top: -1em;
 }
 
-/* Corpo da página */
+:root,
+[data-bs-theme="light"] {
+  /* Cores principais */
+  --bs-primary: #0d6efd;
+  --bs-primary-rgb: 13, 110, 253;
+
+  --menu-bg: #ffffff;
+  --menu-text: #000000;
+  --menu-hover: #e9f2ff;
+
+  --sidebar-bg: #0b2545;
+  --sidebar-text: #ffffff;
+  --sidebar-hover: #1d4f91;
+
+  --content-bg: #f8f9fa;
+  --card-bg: #ffffff;
+
+  --navbar-bg: #0d6efd;
+  --navbar-text: #ffffff;
+
+  --border-color: #dbe5f1;
+}
+
+[data-bs-theme="dark"] {
+  --bs-primary: #4da3ff;
+  --bs-primary-rgb: 77, 163, 255;
+
+  --menu-bg: #121212;
+  --menu-text: black;
+  --menu-hover: #1e293b;
+
+  --sidebar-bg: #000000;
+  --sidebar-text: #ffffff;
+  --sidebar-hover: #0d6efd;
+
+  --content-bg: #181818;
+  --card-bg: #242424;
+
+  --navbar-bg: #000000;
+  --navbar-text: #ffffff;
+
+  --border-color: #2f2f2f;
+}
+
 body {
-  font-family: "Georgia", serif;
-  background-color: #f5f1e8;
-  color: #3e2723;
-  min-height: 100vh;
+  background-color: var(--content-bg);
+  color: var(--menu-text);
+  transition: all 0.3s ease;
 }
 
-/* Barra superior */
-#barraHorizontal {
-  height: 90px;
-  background: linear-gradient(to right, #4e342e, #6d4c41);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+/* Navbar superior */
+.sb-topnav {
+  background-color: var(--navbar-bg) !important;
+  color: var(--navbar-text);
 }
 
-/* Foto do usuário */
-#imagemUsusario {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #d7ccc8;
-  border: 3px solid #d4af37;
+.sb-topnav .navbar-brand,
+.sb-topnav .nav-link,
+.sb-topnav i {
+  color: var(--navbar-text) !important;
 }
 
-/* Logo */
-#logo {
-  width: 180px;
-  height: 60px;
-  background-color: #fff8e1;
+/* Menu lateral */
+.sb-sidenav {
+  background-color: var(--sidebar-bg) !important;
+}
+
+.sb-sidenav .nav-link,
+.sb-sidenav .sb-sidenav-footer,
+.sb-sidenav .sb-sidenav-menu-heading {
+  color: var(--sidebar-text) !important;
+}
+
+.sb-sidenav .nav-link:hover {
+  background-color: var(--sidebar-hover);
+  color: #fff !important;
   border-radius: 8px;
-  border: 2px solid #d4af37;
 }
 
-/* Barra lateral */
-#barraVerical {
-  width: 280px;
-  min-height: calc(100vh - 90px);
-  background-color: #5d4037;
-  position: fixed;
-  top: 90px;
-  left: 0;
-  padding: 25px;
-  color: white;
+/* Menu expandido */
+.sb-sidenav-menu-nested .nav-link {
+  padding-left: 0.5rem; /* afetou principalmente a lateral das opções/*
 }
 
-#caixaGerenciamento,
-#caixaLeitor {
-  background-color: rgba(255, 248, 225, 0.1);
-  border-radius: 10px;
-  margin-bottom: 25px;
-  padding: 15px;
-  border-left: 4px solid #d4af37;
-}
+/* Área principal */
+  #layoutSidenav_content {
+    background-color: var(--content-bg);
+  }
 
-#caixaGerenciamento p:first-child,
-#caixaLeitor p:first-child {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffd54f;
-  margin-bottom: 12px;
-}
+  /* Fichas */
+  .card {
+    background-color: var(--card-bg);
+    color: var(--menu-text);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+  }
 
-#caixaGerenciamento p:not(:first-child),
-#caixaLeitor p:not(:first-child) {
-  padding: 10px;
-  margin: 5px 0;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-}
+  /* Campo de pesquisa */
+  .form-control {
+    background-color: var(--menu-bg);
+    color: var(--menu-text);
+    border: 1px solid var(--border-color);
+  }
 
-#caixaGerenciamento p:not(:first-child):hover,
-#caixaLeitor p:not(:first-child):hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  padding-left: 15px;
-}
+  .form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+  }
 
-/* Barra de pesquisa */
-#barraPesquisa {
-  margin-left: 320px;
-  margin-top: 40px;
-  width: calc(100% - 380px);
-  max-width: 800px;
-  padding: 15px 20px;
-  border: 2px solid #8d6e63;
-  border-radius: 30px;
-  font-size: 1rem;
-  background-color: #fffdf8;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
+  /* Dropdown(perfil,tems,sair) */
+  .dropdown-menu {
+    background-color: var(--menu-bg);
+    border-color: var(--border-color);
+  }
 
-#barraPesquisa:focus {
-  outline: none;
-  border-color: #d4af37;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-}
+  .dropdown-item {
+    color: var(--menu-text);
+  }
 
-/* Resultados da pesquisa */
-#resultadoPesquisa {
-  margin-left: 320px;
-  margin-top: 30px;
-  padding: 20px;
-}
+  .dropdown-item:hover {
+    background-color: var(--menu-hover);
+  }
 
-.card-livro {
-  background: #fffdf8;
-  border-left: 6px solid #d4af37;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  /* Rodapé menu lateral */
+  .sb-sidenav-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }

@@ -1,0 +1,257 @@
+#imagemPerfilUsuario {
+  margin-top: -1em;
+}
+
+/*tema claro*/
+:root,
+[data-bs-theme="light"] {
+  --menu-primary: #0d6efd;
+  --menu-primary-hover: #0b5ed7;
+
+  --menu-navbar: #0b2545;
+
+  --menu-bg: #f5f7fb;
+  --menu-surface: #ffffff;
+
+  --menu-text: #212529;
+  --menu-text-secondary: #6c757d;
+
+  --menu-border: #dde4ef;
+
+  --menu-shadow: rgba(0, 0, 0, 0.08);
+}
+/* tema escuro*/
+[data-bs-theme="dark"] {
+  --menu-primary: #4da3ff;
+  --menu-primary-hover: #218cff;
+
+  --menu-navbar: #000000;
+
+  --menu-bg: #121212;
+  --menu-surface: #1f1f1f;
+
+  --menu-text: #ffffff;
+  --menu-text-secondary: #b8b8b8;
+
+  --menu-border: #303030;
+
+  --menu-shadow: rgba(0, 0, 0, 0.45);
+}
+
+/*lupa*/
+#gerenciamentoEmprestimosLupa {
+  background: var(--menu-primary);
+
+  color: white;
+
+  border: none;
+
+  border-radius: 12px;
+}
+/*barra de pesquisa*/
+#pesquisarEmprestimo {
+  background: var(--menu-surface);
+
+  color: var(--menu-text);
+
+  border: 1px solid var(--menu-border);
+
+  border-radius: 12px;
+
+  min-height: 54px;
+}
+
+#pesquisarEmprestimo::placeholder {
+  color: var(--menu-text-secondary);
+}
+
+#pesquisarEmprestimo:focus {
+  background: var(--menu-surface);
+
+  color: var(--menu-text);
+
+  border-color: var(--menu-primary);
+
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.2);
+}
+/* botao de icone +*/
+#adicionarEmprestimo {
+  background: var(--menu-primary);
+
+  border: none;
+
+  color: white;
+
+  border-radius: 12px;
+
+  transition: 0.25s;
+}
+
+#adicionarEmprestimo:hover {
+  background: var(--menu-primary-hover);
+
+  transform: translateY(-2px);
+}
+/* card*/
+.card {
+  background: var(--menu-surface);
+
+  border: 1px solid var(--menu-border);
+
+  border-radius: 18px;
+
+  box-shadow: 0 6px 20px var(--menu-shadow);
+}
+
+.card-body {
+  color: var(--menu-text);
+}
+
+/* div resultadoPesquisa*/
+#resultadoPesquisa {
+  cursor: pointer;
+}
+
+#resultadoPesquisa .border {
+  border: 1px solid var(--menu-border) !important;
+
+  border-radius: 16px !important;
+
+  transition: 0.25s;
+}
+
+#resultadoPesquisa .border:hover {
+  border-color: var(--menu-primary) !important;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 16px var(--menu-shadow);
+}
+
+#resultadoPesquisa h5 {
+  color: var(--menu-text);
+
+  font-weight: 700;
+}
+
+#resultadoPesquisa p {
+  color: var(--menu-text-secondary);
+}
+
+/*Bolinha de status do empréstimo*/
+#circuloStatus {
+  color: #ffc107;
+
+  width: 22px;
+
+  height: 22px;
+
+  margin-top: 10px;
+
+  animation: pulseStatus 2s infinite;
+}
+
+@keyframes pulseStatus {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Exemplos de status */
+
+.status-atrasado {
+  color: #dc3545 !important;
+}
+
+.status-entregue {
+  color: #198754 !important;
+}
+
+.status-pendente {
+  color: #ffc107 !important;
+}
+
+/*botões dos cards*/
+
+.btn-success {
+  background: var(--menu-primary);
+
+  border: none;
+}
+
+.btn-success:hover {
+  background: var(--menu-primary-hover);
+}
+
+.btn-success,
+.btn-primary {
+  border-radius: 12px;
+}
+
+.btn-primary {
+  border: none;
+}
+
+/* Modais*/
+
+.modal-content {
+  background: var(--menu-surface);
+
+  color: var(--menu-text);
+
+  border: 1px solid var(--menu-border);
+
+  border-radius: 18px;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--menu-border);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--menu-border);
+}
+
+.modal-title {
+  color: var(--menu-text);
+}
+
+/*Formulários */
+
+.form-label {
+  color: var(--menu-text);
+
+  font-weight: 600;
+}
+
+.form-control {
+  background: var(--menu-surface);
+
+  color: var(--menu-text);
+
+  border: 1px solid var(--menu-border);
+
+  border-radius: 12px;
+}
+
+.form-control:focus {
+  background: var(--menu-surface);
+
+  color: var(--menu-text);
+
+  border-color: var(--menu-primary);
+
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.2);
+}
+
+[data-bs-theme="dark"] .text-muted {
+  color: var(--menu-text-secondary) !important;
+}

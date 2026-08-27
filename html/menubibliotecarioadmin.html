@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-br" data-bs-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,16 +14,32 @@
       href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
       rel="stylesheet"
     />
-    <link href="../css/styles.css" rel="stylesheet" />
+    <link
+  rel="stylesheet"
+  hrefax="/libs/font-awesome/6.5.2/css/all.min.css">
+
+     <link href="../css/styles.css" rel="stylesheet" />
+     <link href="../css/leitores.css" rel="stylesheet" />
+     <link href="../css/bibliotecarios.css" rel="stylesheet" />
+     <link href="../css/emprestimos.css" rel="stylesheet" />
+     <link href="../css/exemplares.css" rel="stylesheet" />
+     <link href="../css/estantes.css" rel="stylesheet" />
+     <link href="../css/classificacao.css" rel="stylesheet" />
+     <link href="../css/secoes.css" rel="stylesheet"/>
+     <link href="../css/menubibliotecarioadmin.css" rel="stylesheet" />
+
+     <!--O body e outros-->
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/menubibliotecarioadmin.css" />
   </head>
   <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <p class="navbar-brand ps-3 w-10">
+      <p class="navbar-brand ps-3 me-3">
     
         <svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 512 512"
@@ -136,6 +152,33 @@
             class="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdown">
 
+            <!--Cabeçalho das opções de tema-->
+            <li><h6 class="dropdown-header">Temas</h6></li>
+
+            <!--Tipos de Tema -->
+            <li>
+              <button
+                class="dropdown-item d-flex align-items-center"
+                type="button"
+                id="botaoTemaClaro"
+                data-theme-value="light"
+              >
+                <i class="bi bi-sun-fill me-2"></i>
+                Tema Claro
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item d-flex align-items-center"
+                type="button"
+                id="botaoTemaEscuro"
+                data-theme-value="dark"
+              >
+                <i class="bi bi-moon-fill me-2"></i> Tema Escuro
+              </button>
+            </li>
+            <!--Tipos de Tema-->
+            <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#!">Sair</a></li>
 
           </ul>
@@ -176,62 +219,29 @@
                 data-bs-parent="#sidenavAccordion"
               > <!--Opções de Gerenciamento-->
                 <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="bibliotecarios.html"
+                  <a class="nav-link"  id="bibliotecarios"
                     >Bibliotecários</a>
 
-                  <a class="nav-link" href="leitores.html"
+                  <a class="nav-link"  id="leitores"
                     >Leitores</a>
                   
-                  <a class="nav-link" href="emprestimos.html"
+                  <a class="nav-link"  id="emprestimos"
                     >Empréstimos</a>
                   
-                  <a class="nav-link" href="exemplares.html"
+                  <a class="nav-link"  id="exemplares"
                     >Exemplares</a>
 
-                  <a class="nav-link" href="estantes.html"
+                  <a class="nav-link" id="estantes"
                     >Estantes</a>
 
-                  <a class="nav-link" href="#"
-                    >Gêneros</a>
+                  <a class="nav-link"  id="classificacoes"
+                    >Classificações</a>
 
-                  <a class="nav-link" href="#"
+                  <a class="nav-link"  id = "secoes"
                     >Seções</a>
 
                 </nav>
               </div> <!--Opções de Gerenciamento-->
-
-              <a
-                class="nav-link collapsed"
-                href="#"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapsePages"
-                aria-expanded="false"
-                aria-controls="collapsePages"
-              > <!--Parte de Leitor-->
-                <div class="sb-nav-link-icon">
-                  <i class="fas fa-book-open"></i>
-                </div>
-                Meus Empréstimos
-                <div class="sb-sidenav-collapse-arrow">
-                  <i class="fas fa-angle-down"></i>
-                </div>
-              </a> <!--Parte de Leitor-->
-
-              <div 
-                class="collapse"
-                id="collapsePages"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#sidenavAccordion"
-              > <!--Opções de um Leitor-->
-                <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="layout-static.html">
-                    Solicitar Agendamento
-                  </a>
-                  <a class="nav-link" href="layout-static.html">
-                    Empréstimos Atuais
-                  </a>
-                </nav>
-              </div> <!--Opções de um Leitor-->
 
           <div class="sb-sidenav-footer d-flex flex-row gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
@@ -246,9 +256,9 @@
       <div id="layoutSidenav_content"> <!--Conteúdo principal-->
         <main class="container-fluid px-4 mt-5">
            <div class="mb-4 w-100">
-             <input type="text" placeholder="Pesquisar livro..." class="form-control  m-auto" id="barraPesquisaLivro">
+             <input type="text" placeholder="Pesquisar livro..." class="form-control  m-auto" id="pesquisarLivrosBibliotecarioAdmin" name="barraPesquisaLivrosBibliotecarioAdmin">
            </div>
-           <div class="card" id="ResultadosLivros">
+           <div class="card" id="resultadosLivrosBibliotecarioAdmin">
               <div class="card-body">
                 <p>Nenhum Resultado</p>
               </div>
@@ -256,11 +266,15 @@
         </main>
       </div>
     </div>
+
+    
             
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/scripts.js"></script> <!--Funcionalidade do botão de três linhas-->
+    <script src="../js/jsGlobal/scripts.js"></script> 
+    <script src="../js/jsGlobal/atualizarTemas.js"></script>
+    <script src="../js/jsGlobal/carregaropcoesmenu.js"></script>
   </body>
 </html>

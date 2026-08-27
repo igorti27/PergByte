@@ -1,0 +1,127 @@
+#imagemPerfilUsuario {
+  margin-top: -1em;
+}
+
+:root,
+[data-bs-theme="light"] {
+  /* Cores principais */
+  --bs-primary: #0d6efd;
+  --bs-primary-rgb: 13, 110, 253;
+
+  --menu-bg: #ffffff;
+  --menu-text: #000000;
+  --menu-hover: #e9f2ff;
+
+  --sidebar-bg: #0b2545;
+  --sidebar-text: #ffffff;
+  --sidebar-hover: #1d4f91;
+
+  --content-bg: #f8f9fa;
+  --card-bg: #ffffff;
+
+  --navbar-bg: #0d6efd;
+  --navbar-text: #ffffff;
+
+  --border-color: #dbe5f1;
+}
+
+[data-bs-theme="dark"] {
+  --bs-primary: #4da3ff;
+  --bs-primary-rgb: 77, 163, 255;
+
+  --menu-bg: #121212;
+  --menu-text: black;
+  --menu-hover: #1e293b;
+
+  --sidebar-bg: #000000;
+  --sidebar-text: #ffffff;
+  --sidebar-hover: #0d6efd;
+
+  --content-bg: #181818;
+  --card-bg: #242424;
+
+  --navbar-bg: #000000;
+  --navbar-text: #ffffff;
+
+  --border-color: #2f2f2f;
+}
+
+body {
+  background-color: var(--content-bg);
+  color: var(--menu-text);
+  transition: all 0.3s ease;
+}
+
+/* Navbar superior */
+.sb-topnav {
+  background-color: var(--navbar-bg) !important;
+  color: var(--navbar-text);
+}
+
+.sb-topnav .navbar-brand,
+.sb-topnav .nav-link,
+.sb-topnav i {
+  color: var(--navbar-text) !important;
+}
+
+/* Menu lateral */
+.sb-sidenav {
+  background-color: var(--sidebar-bg) !important;
+}
+
+.sb-sidenav .nav-link,
+.sb-sidenav .sb-sidenav-footer,
+.sb-sidenav .sb-sidenav-menu-heading {
+  color: var(--sidebar-text) !important;
+}
+
+.sb-sidenav .nav-link:hover {
+  background-color: var(--sidebar-hover);
+  color: #fff !important;
+  border-radius: 8px;
+}
+
+/* Menu quando expandido */
+.sb-sidenav-menu-nested .nav-link {
+  padding-left: 0.5rem; /* afetou principalmente a lateral das opções/*
+}
+
+/* Área principal */
+  #layoutSidenav_content {
+    background-color: var(--content-bg);
+  }
+
+  /* Fichas */
+  .card {
+    background-color: var(--card-bg);
+    color: var(--menu-text);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+  }
+
+  /* Campo de pesquisa */
+  .form-control {
+    background-color: var(--menu-bg);
+    color: var(--menu-text);
+    border: 1px solid var(--border-color);
+  }
+
+  .form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+  }
+
+  /* Dropdown (perfil,temas,botao) */
+  .dropdown-menu {
+    background-color: var(--menu-bg);
+    border-color: var(--border-color);
+  }
+
+  .dropdown-item {
+    color: var(--menu-text);
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--menu-hover);
+  }
+}

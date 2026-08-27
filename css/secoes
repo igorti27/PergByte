@@ -2,22 +2,19 @@
   margin-top: -1em;
 }
 
-label {
-  display: block;
+textarea {
+  resize: none;
+  background: var(--textarea);
 }
 
-fieldset > input {
-  border-radius: 24px;
-  border: none;
-  background-color: rgb(150, 149, 149);
-  padding: 2%;
-}
+/* Tema claro */
 
-/* tema claro*/
 :root,
 [data-bs-theme="light"] {
   --menu-primary: #0d6efd;
   --menu-primary-hover: #0b5ed7;
+
+  --textarea: white;
 
   --menu-navbar: #0b2545;
 
@@ -32,11 +29,13 @@ fieldset > input {
   --menu-shadow: rgba(0, 0, 0, 0.08);
 }
 
-/* tema escuro*/
+/* Tema */
 
 [data-bs-theme="dark"] {
   --menu-primary: #4da3ff;
   --menu-primary-hover: #218cff;
+
+  --textarea: rgb(152, 148, 148);
 
   --menu-navbar: #000000;
 
@@ -51,21 +50,87 @@ fieldset > input {
   --menu-shadow: rgba(0, 0, 0, 0.45);
 }
 
-/* lupa */
+body {
+  background: var(--menu-bg);
 
-#gerenciamentoLeitoresLupa {
-  background: var(--menu-primary);
+  color: var(--menu-text);
 
-  border: none;
+  transition: 0.3s ease; /* controla a transição*/
+}
 
+/*Navbar, logo e botão de três linhas*/
+
+.sb-topnav {
+  background: var(--menu-navbar) !important;
+
+  min-height: 75px;
+
+  box-shadow: 0 4px 15px var(--menu-shadow);
+}
+
+.navbar-brand {
+  font-weight: 700;
+
+  color: #fff !important;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.7rem;
+}
+
+#sidebarToggle {
   color: white;
 
-  border-radius: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+}
+
+/* Dropdown, parte do perfil e opções de tema*/
+.dropdown-menu {
+  background: var(--menu-surface);
+
+  border: 1px solid var(--menu-border);
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow: 0 8px 20px var(--menu-shadow);
+}
+
+.dropdown-header {
+  color: var(--menu-text-secondary);
+}
+
+.dropdown-item {
+  color: var(--menu-text);
+
+  transition: 0.25s;
+}
+
+.dropdown-item:hover {
+  background: var(--menu-primary);
+
+  color: white;
+}
+
+.dropdown-item.active {
+  background: var(--menu-primary);
+
+  color: white;
+}
+
+/*Lupa*/
+#gerenciamentoSecaoLupa {
+  color: white;
 }
 
 /* barra de pesquisa*/
-#pesquisarLeitores {
-  background: var(--menu-surface);
+#pesquisarSecao {
+  background-color: var(--menu-surface);
 
   color: var(--menu-text);
 
@@ -76,20 +141,20 @@ fieldset > input {
   min-height: 52px;
 }
 
-#pesquisarLeitores::placeholder {
+#pesquisarSecao::placeholder {
   color: var(--menu-text-secondary);
 }
 
-#pesquisarLeitores:focus {
+#pesquisarSecao:focus {
   border-color: var(--menu-primary);
 
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.2);
 }
 
-/* botao de + */
+/*Cadastro exemplar*/
 
-#adicionarLeitor {
-  background: var(--menu-primary);
+#adicionarSecao {
+  background-color: var(--menu-primary);
 
   border: none;
 
@@ -100,13 +165,13 @@ fieldset > input {
   transition: 0.2s ease;
 }
 
-#adicionarLeitor:hover {
-  background: var(--menu-primary-hover);
+#adicionarSecao:hover {
+  background-color: var(--menu-primary-hover);
 
   transform: translateY(-2px);
 }
 
-/* Cards */
+/*Fichas*/
 
 .card {
   background: var(--menu-surface);
@@ -124,7 +189,7 @@ fieldset > input {
   color: var(--menu-text);
 }
 
-/* div resultadoPesquisa */
+/*Div resultado pesquisa*/
 
 #resultadoPesquisa {
   cursor: pointer;
@@ -146,7 +211,7 @@ fieldset > input {
   box-shadow: 0 5px 18px var(--menu-shadow);
 }
 
-/* imagem dentro da div */
+/* Imagem do exemplar */
 
 #resultadoPesquisa img {
   border: 2px solid var(--menu-primary);
@@ -157,10 +222,10 @@ fieldset > input {
 }
 
 #resultadoPesquisa img:hover {
-  transform: scale(1);
+  transform: scale(1.05); /* quanto deve alterar o tamamnho da imagem*/
 }
 
-/* Textos dos cards */
+/*Fonte das Fichas */
 
 #resultadoPesquisa h5 {
   color: var(--menu-text);
@@ -172,6 +237,8 @@ fieldset > input {
   color: var(--menu-text-secondary);
 }
 
+/*quando for o tema escuro, aplica a cor da variavel*/
+
 [data-bs-theme="dark"] .text-muted {
   color: var(--menu-text-secondary) !important;
 }
@@ -180,11 +247,10 @@ fieldset > input {
   color: white !important;
 }
 
-/*Botões de exclusão e edição*/
+/* Botões presentes nos cards */
 
 .btn-success {
   background: var(--menu-primary);
-
   border: none;
 }
 
@@ -206,7 +272,7 @@ fieldset > input {
   border: none;
 }
 
-/* Leitores */
+/* Modais */
 
 .modal-content {
   background: var(--menu-surface);
@@ -230,7 +296,7 @@ fieldset > input {
   color: var(--menu-text);
 }
 
-/* formularios */
+/* Formularios */
 
 .form-label {
   color: var(--menu-text);
@@ -260,4 +326,16 @@ fieldset > input {
   border-color: var(--menu-primary);
 
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.2);
+}
+
+/*quando for tema claro, aplica as cores ao texto de  */
+
+[data-bs-theme="dark"] .form-control {
+  color: white;
+}
+
+/* inverte a cor do botão fechar */
+
+[data-bs-theme="dark"] .btn-close {
+  filter: invert(1);
 }
