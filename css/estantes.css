@@ -5,8 +5,8 @@
 textarea {
   resize: none;
 }
-/*tema claro*/
 
+/*tema claro*/
 :root,
 [data-bs-theme="light"] {
   --menu-primary: #0d6efd;
@@ -26,7 +26,6 @@ textarea {
 }
 
 /* tema escuro */
-
 [data-bs-theme="dark"] {
   --menu-primary: #4da3ff;
   --menu-primary-hover: #218cff;

@@ -1,13 +1,7 @@
-const opcaoGerencialeitores = document.getElementById("leitores");
-const opcaoGerenciabibliotecarios = document.getElementById("bibliotecarios");
-const opcaoGerenciaemprestimos = document.getElementById("emprestimos");
-const opcaoGerenciaexemplares = document.getElementById("exemplares");
-const opcaoGerenciaestantes = document.getElementById("estantes");
-const opcaoGerenciaclassificacao = document.getElementById("classificacoes");
-const opcaoGerenciamentosecao = document.getElementById("secoes");
+const menu = document.getElementById("layoutSidenav_content");
 
-opcaoGerenciabibliotecarios.addEventListener("click", function () {
-  let menu = document.getElementById("layoutSidenav_content");
+
+function gerenciarBibliotecarios() {
   menu.innerHTML = "";
   menu.innerHTML = `
         <main class="container-fluid px-4 mt-5">
@@ -362,10 +356,9 @@ opcaoGerenciabibliotecarios.addEventListener("click", function () {
       </div>
    </main>
 `;
-});
+};
 
-opcaoGerenciaemprestimos.addEventListener("click", function () {
-  let menu = document.getElementById("layoutSidenav_content");
+function gerenciarEmprestimos() {
   menu.innerHTML = "";
   menu.innerHTML = `
     <main class="container-fluid px-4 mt-5">
@@ -824,15 +817,14 @@ opcaoGerenciaemprestimos.addEventListener("click", function () {
         </main>
       </div>
     </div>`;
-});
+};
 
-opcaoGerenciaexemplares.addEventListener("click", function () {
-  let menu = document.getElementById("layoutSidenav_content");
+function gerenciarExemplares() {
   menu.innerHTML = "";
   menu.innerHTML = `
      
-        <main class="container-fluid px-4 mt-5">
-           <div class="container">
+  <main class="container-fluid px-4 mt-5">
+    <div class="container">
       <!--Barra de Pesquisa-->
       <div class="row mb-4 mt-5">
         <div class="col-md-8 ms-auto me-auto mb-4">
@@ -1293,10 +1285,9 @@ opcaoGerenciaexemplares.addEventListener("click", function () {
         </main>
   
   `;
-});
+};
 
-opcaoGerenciaestantes.addEventListener("click", function () {
-  let menu = document.getElementById("layoutSidenav_content");
+function gerenciarEstantes() {
   menu.innerHTML = "";
   menu.innerHTML = `
      
@@ -1732,10 +1723,9 @@ opcaoGerenciaestantes.addEventListener("click", function () {
       </div>
     </main>
   `;
-});
+};
 
-opcaoGerenciaclassificacao.addEventListener("click", function () {
-  let menu = document.getElementById("layoutSidenav_content");
+function gerenciarClassificacoes() {
   menu.innerHTML = "";
   menu.innerHTML = `
      
@@ -2054,10 +2044,9 @@ opcaoGerenciaclassificacao.addEventListener("click", function () {
         </main>
      
   `;
-});
+};
 
-opcaoGerenciamentosecao.addEventListener("click", function () {
-  let menu = document.getElementById("layoutSidenav_content");
+function gerenciarSecoes() {
   menu.innerHTML = "";
   menu.innerHTML = `
       <main class="container-fluid px-4 mt-5">
@@ -2442,13 +2431,12 @@ opcaoGerenciamentosecao.addEventListener("click", function () {
     </main>
     
     `;
-});
+};
 
-opcaoGerencialeitores.addEventListener("click", function () {
-  let menu = document.getElementById("layoutSidenav_content");
+function gerenciarLeitores() {
   menu.innerHTML = "";
   menu.innerHTML = `
-          <main class="container-fluid px-4 mt-5">
+      <main class="container-fluid px-4 mt-5">
              <div class="container py-5">
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
@@ -2789,4 +2777,4 @@ opcaoGerencialeitores.addEventListener("click", function () {
     </main>
        
        `;
-});
+};

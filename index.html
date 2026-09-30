@@ -6,11 +6,110 @@
     <title>PergByte</title>
   </head>
   <link rel="stylesheet" href="css/index.css" />
+  <style>
+    .abas{
+      display:flex;
+      justify-content: space-around;
+    }
+  </style>
   <body>
     <main class="pagina">
       <section class="lateral">
         <div class="logo">
-          <span>P</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            width="48"
+            height="48"
+            fill="none"
+            id="logoPergbyte"
+          >
+            <!-- Coroa esquerda -->
+            <path
+              d="M120 350
+             C80 310 70 250 90 200
+             C110 150 140 120 180 100"
+              stroke="#3A5F0B"
+              stroke-width="12"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M115 310 l-20 -10
+             M105 270 l-22 -6
+             M110 230 l-20 8
+             M130 190 l-16 15
+             M155 150 l-10 20"
+              stroke="#3A5F0B"
+              stroke-width="10"
+              stroke-linecap="round"
+            />
+
+            <!-- Coroa direita -->
+            <path
+              d="M392 350
+             C432 310 442 250 422 200
+             C402 150 372 120 332 100"
+              stroke="#3A5F0B"
+              stroke-width="12"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M397 310 l20 -10
+             M407 270 l22 -6
+             M402 230 l20 8
+             M382 190 l16 15
+             M357 150 l10 20"
+              stroke="#3A5F0B"
+              stroke-width="10"
+              stroke-linecap="round"
+            />
+
+            <!-- Livro -->
+            <path
+              d="M150 180
+             Q200 160 256 180
+             L256 330
+             Q200 310 150 330 Z"
+              fill="#0B2545"
+            />
+
+            <path
+              d="M362 180
+             Q312 160 256 180
+             L256 330
+             Q312 310 362 330 Z"
+              fill="#0B2545"
+            />
+
+            <!-- Páginas -->
+            <path
+              d="M165 190
+             Q205 175 256 190
+             L256 315
+             Q205 300 165 315 Z"
+              fill="#F8F5F0"
+            />
+
+            <path
+              d="M347 190
+             Q307 175 256 190
+             L256 315
+             Q307 300 347 315 Z"
+              fill="#F8F5F0"
+            />
+
+            <!-- Marcador -->
+            <rect x="246" y="175" width="20" height="110" fill="#C9A227" />
+
+            <path
+              d="M246 285
+             L256 315
+             L266 285"
+              fill="#C9A227"
+            />
+          </svg>
           PergByte
         </div>
         <div class="apresentacao">
@@ -44,14 +143,6 @@
               onclick="trocarFormulario('login', this)"
             >
               Entrar
-            </button>
-
-            <button
-              class="aba"
-              type="button"
-              onclick="trocarFormulario('cadastro', this)"
-            >
-              Cadastrar
             </button>
 
             <button
@@ -99,69 +190,6 @@
             </form>
           </section>
 
-          <section id="cadastro" class="formulario">
-            <div class="titulo">
-              <h2>Criar uma conta</h2>
-              <p>Preencha todos os campos para se cadastrar.</p>
-            </div>
-
-            <form onsubmit="cadastrar(event)">
-              <label>
-                Nome completo
-
-                <input
-                  name="nome"
-                  type="text"
-                  placeholder="Digite seu nome completo"
-                  minlength="3"
-                  autocomplete="name"
-                  required
-                />
-              </label>
-
-              <label>
-                E-mail
-
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="seuemail@exemplo.com"
-                  autocomplete="email"
-                  required
-                />
-              </label>
-
-              <label>
-                Senha
-
-                <input
-                  name="senha"
-                  type="password"
-                  placeholder="Mínimo de 6 caracteres"
-                  minlength="6"
-                  maxlength="10"
-                  autocomplete="new-password"
-                  required
-                />
-              </label>
-
-              <label>
-                Confirmar senha
-
-                <input
-                  name="confirmacao"
-                  type="password"
-                  placeholder="Digite a senha novamente"
-                  minlength="6"
-                  maxlength="10"
-                  autocomplete="new-password"
-                  required
-                />
-              </label>
-
-              <button class="principal" type="submit">Cadastrar</button>
-            </form>
-          </section>
 
           <section id="recuperacao" class="formulario">
             <div class="titulo">
