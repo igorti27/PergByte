@@ -17,6 +17,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="../css/pesquisaLivros.css" />
+    
   </head>
   <body>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -212,16 +213,16 @@
                 <table class="table table-borderless"> <!--Remove todas as bordas da tabela-->
                     <tbody>
                         <tr>
-                            <th>Autor(es):</th>
-                            <td>X</td>
+                            <th class="col-1">Autor(es):</th>
+                            <td class="col-6">X</td>
                         </tr>
                         <tr>
-                            <th>Classificação:</th>
-                            <td>X</td>
+                            <th class="col-1">Classificação:</th>
+                            <td class="col-6">X</td>
                         </tr>
                         <tr>
-                            <th>Class. Indicativa:</th>
-                            <td>X</td>
+                            <th class="col-1">Class. Indicativa:</th>
+                            <td class="col-6">X</td>
                         </tr>
                       </tbody>
                   </table>
@@ -231,7 +232,7 @@
           </div>
         <div class="row g-4 align-items-start gap-3 flex-column">
            <h4>Sinopse:</h4>
-           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, non nesciunt, maiores nam modi error provident quis delectus, aperiam eligendi voluptatibus nulla veniam facere voluptate explicabo voluptatem laboriosam qui unde?</p>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni placeat est dignissimos, possimus voluptas, molestias deleniti provident sit sunt fugiat alias, rem veniam nam quos perferendis debitis nesciunt sint veritatis!</p>
         </div>
         <hr>
       <div class="table-responsive mt-3">
@@ -252,10 +253,10 @@
           <tbody>
            <tr>
              <td>
-              <p class="text-center mb-0">EX-001</p>
+              <p class="text-center mb-0">0000000000000</p>
              </td>
              <td>
-              <p class="text-center mb-0">Emprestado</p>
+              <p class="text-center mb-0">Em empréstimo</p>
              </td>
              <td>
               <p class="text-center mb-0">1-C</p>
@@ -265,7 +266,8 @@
        </table>
       </div>
       <hr>
-      <div class="card mt-4">
+     
+   <div class="card mt-4">
 
     <div class="card-header">
         <h4 class="mb-0">Comentários</h4>
@@ -317,13 +319,15 @@
         <!-- Novo comentário -->
         <div class="mt-4">
 
-            <h5>Adicionar comentário</h5>
+            <h5>Adicionar comentário:</h5>
 
             <textarea
                 class="form-control"
                 rows="4"
                 placeholder="Comentário..."
                 style="resize: none;"
+                id="comentarioUsuario"
+                name="comentarioUsuario"
             ></textarea>
 
             <button class="btn btn-primary mt-4" id="botaoEnviarComentario">

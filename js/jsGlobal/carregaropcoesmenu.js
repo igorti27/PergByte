@@ -306,6 +306,7 @@ function gerenciarBibliotecarios() {
                       class="btn btn-success"
                       data-bs-toggle="modal"
                       data-bs-target="#modificarInformacoesBibliotecario"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -327,6 +328,7 @@ function gerenciarBibliotecarios() {
                       class="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#avisoexclusao"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -755,6 +757,7 @@ function gerenciarEmprestimos() {
                       class="btn btn-success"
                       data-bs-toggle="modal"
                       data-bs-target="#modificarInformacoesEmprestimo"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -776,6 +779,7 @@ function gerenciarEmprestimos() {
                       class="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#avisoexclusao"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -816,7 +820,7 @@ function gerenciarEmprestimos() {
       </div>
         </main>
       </div>
-    </div>`;
+   </div>`;
 };
 
 function gerenciarExemplares() {
@@ -1673,6 +1677,7 @@ function gerenciarEstantes() {
                       class="btn btn-success"
                       data-bs-toggle="modal"
                       data-bs-target="#modificarEstante"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -1694,6 +1699,7 @@ function gerenciarEstantes() {
                       class="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#avisoexclusao"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -1993,6 +1999,7 @@ function gerenciarClassificacoes() {
                       class="btn btn-success"
                       data-bs-toggle="modal"
                       data-bs-target="#modificarInformacoesClassificacao"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -2014,6 +2021,7 @@ function gerenciarClassificacoes() {
                       class="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#avisoexclusao"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -2380,6 +2388,7 @@ function gerenciarSecoes() {
                       class="btn btn-success"
                       data-bs-toggle="modal"
                       data-bs-target="#modificarInformacoesSecao"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -2401,6 +2410,7 @@ function gerenciarSecoes() {
                       class="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#avisoexclusao"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -2726,6 +2736,7 @@ function gerenciarLeitores() {
                       class="btn btn-success"
                       data-bs-toggle="modal"
                       data-bs-target="#modificarInformacoesLeitor"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -2747,6 +2758,7 @@ function gerenciarLeitores() {
                       class="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#avisoexclusao"
+                      data-stop-propagation
                     >
                       <i>
                         <svg
@@ -2776,5 +2788,5 @@ function gerenciarLeitores() {
       </div>
     </main>
        
-       `;
+    `;
 };

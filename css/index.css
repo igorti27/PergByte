@@ -282,6 +282,11 @@ input:focus {
   }
 }
 
+.abas{
+      display:flex;
+      justify-content: space-around;
+    }
+
 @media (max-width: 500px) {
   .abas {
     grid-template-columns: 1fr;
