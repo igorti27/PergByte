@@ -821,7 +821,7 @@ function gerenciarEmprestimos(){ // Pronta
         </main>
       </div>
    </div>`;
-};
+}; 
 
 function gerenciarExemplaresEdicoes(){ // Refazer formulários
   menu.innerHTML = "";
@@ -1733,7 +1733,7 @@ function gerenciarEstantes(){ // Pronta
 
 function gerenciarClassificacoes(){ // Pronta
   menu.innerHTML = "";
-  menu.innerHTML = `
+  menu.innerHTML = ` 
      
         <main class="container-fluid px-4 mt-5">
            <div class="container py-5">
@@ -2054,11 +2054,12 @@ function gerenciarClassificacoes(){ // Pronta
   `;
 };
 
-function gerenciarSecoes(){ // Alterar CSS desse menu
+function gerenciarSecoes(){ // Pronta
   menu.innerHTML = "";
   menu.innerHTML = `
-      <main class="container-fluid px-4 mt-5">
-           <div class="container py-5">
+     
+<main class="container-fluid px-4 mt-5">
+    <div class="container py-5">
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
@@ -2069,12 +2070,17 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
             <input
               type="text"
               class="form-control"
-              placeholder="Seções..."
-              id="pesquisarSecao"
-              name="pesquisadeSecao"
+              id="pesquisarSecoes"
+              name="pesquisadeSecoes"
+              placeholder="Secao..."
             />
 
-            <button class="btn btn-warning fs-4 px-3"  data-bs-toggle="modal" data-bs-target="#cadastrarSecao" id="adicionarSecao">
+            <button
+              class="btn btn-warning fs-4 px-3"
+              data-bs-toggle="modal"
+              data-bs-target="#cadastrarSecao"
+              id="adicionarEstante"
+            >
               <i
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -2118,12 +2124,16 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
               <p class="mb-0 text-muted"><strong>Sigla:</strong> TR</p>
 
               <p class="mb-0 text-muted">
-                <strong>Classificação Temática:</strong> 68.9
+                <strong>Estantes Associadas:</strong> 1-C, 2-B, 5-F.
               </p>
 
               <p class="mb-0 text-muted">
-                <strong>Localização:</strong> Primeiro Andar
+                <strong>Descrição:</strong> 
+                lorem ipsum ijdiidowdqw iuiuew indnqhdwiu njidiquwiidq 
+                doiiodoi qijwjdiq wdijq swicu wijndciaccia iidfiqiv ijsvisdiv
+                ckoqojcj sjcnjiaqwnj aijsjcniaqj sijnvinjs sndnviw dicijnaijnv.
               </p>
+
             </div>
             <div class="modal-footer">
               <button
@@ -2160,14 +2170,17 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
               <p class="mb-0 text-muted"><strong>Sigla:</strong> TR</p>
 
               <p class="mb-0 text-muted">
-                <strong>Classificação Temática:</strong> 68.9
+                <strong>Estantes Associadas:</strong> 1-C, 2-B, 5-F.
               </p>
 
               <p class="mb-0 text-muted">
-                <strong>Localização:</strong> Primeiro Andar
+                <strong>Descrição:</strong> 
+                lorem ipsum ijdiidowdqw iuiuew indnqhdwiu njidiquwiidq 
+                doiiodoi qijwjdiq wdijq swicu wijndciaccia iidfiqiv ijsvisdiv
+                ckoqojcj sjcnjiaqwnj aijsjcniaqj sijnvinjs sndnviw dicijnaijnv.
               </p>
 
-              <h4>Você realmente deseja excluir esta seção ?</h4>
+              <h4>Você realmente deseja excluir esta Seção ?</h4>
             </div>
             <div class="modal-footer">
               <button
@@ -2183,13 +2196,12 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
         </div>
       </div>
 
-       
-      <!--Janela de Cadastro-->
+      <!--Janela de cadastro-->
       <div class="modal" tabindex="-1" id="cadastrarSecao">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Cadastrando...</h5>
+              <h5 class="modal-title">Cadastrando..</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -2202,12 +2214,12 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
                 action="#"
                 target="_self"
                 method="post"
-                id="formularioCadastroSecao"
+                id="formularioCadastroEstante"
               >
                 <div class="row g-3">
                   <div class="col-6">
                     <label for="nomeCadastroSecao" class="form-label"
-                      >Seção:</label
+                      >Nome:</label
                     >
                     <input
                       type="text"
@@ -2217,7 +2229,7 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
                       required
                     />
                   </div>
-                  <div class="col-6">
+                   <div class="col-4">
                     <label for="siglaCadastroSecao" class="form-label"
                       >Sigla:</label
                     >
@@ -2229,25 +2241,15 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
                       required
                     />
                   </div>
-                  <div class="col-12">
-                    <label for="localizacaoEdicaoSecao" class="form-label"
-                      >Localização:</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="localizacaoCadastroSecao"
-                      name="localizacaoCadastroSecao"
-                      required
-                    />
-                  </div>
                   <div class="col-12 d-flex flex-column">
-                    <label for="descricaoSecaoCadastro" class="form-label"
+                    <label
+                      for="descricaoSecaoCadastro"
+                      class="form-label"
                       >Descrição:</label
                     >
                     <textarea
-                      id="descricaoSecaoEdicao"
-                      name="descricaoSecaoEdicao"
+                      id="descricaoSecaoCadastro"
+                      name="descricaoSecaoCadastro"
                       rows="7"
                       cols="7"
                     ></textarea>
@@ -2264,7 +2266,7 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
                 Cancelar
               </button>
               <button type="button" class="btn btn-primary">
-                Salvar Alterações
+                Cadastrar Seção
               </button>
             </div>
           </div>
@@ -2272,11 +2274,11 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
       </div>
 
       <!--Janela de edição-->
-      <div class="modal" tabindex="-1" id="modificarInformacoesSecao">
+      <div class="modal" tabindex="-1" id="modificarSecao">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Editando...</h5>
+              <h5 class="modal-title">Editando..</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -2291,10 +2293,10 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
                 method="post"
                 id="formularioEdicaoSecao"
               >
-                <div class="row g-3">
+               <div class="row g-3">
                   <div class="col-6">
                     <label for="nomeEdicaoSecao" class="form-label"
-                      >Seção:</label
+                      >Nome:</label
                     >
                     <input
                       type="text"
@@ -2304,7 +2306,7 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
                       required
                     />
                   </div>
-                  <div class="col-6">
+                   <div class="col-4">
                     <label for="siglaEdicaoSecao" class="form-label"
                       >Sigla:</label
                     >
@@ -2316,20 +2318,10 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
                       required
                     />
                   </div>
-                  <div class="col-12">
-                    <label for="localizacaoEdicaoSecao" class="form-label"
-                      >Localização:</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="localizacaoEdicaoSecao"
-                      name="localizacaoEdicaoSecao"
-                      required
-                    />
-                  </div>
                   <div class="col-12 d-flex flex-column">
-                    <label for="descricaoSecaoEdicao" class="form-label"
+                    <label
+                      for="descricaoSecaoEdicao"
+                      class="form-label"
                       >Descrição:</label
                     >
                     <textarea
@@ -2370,24 +2362,22 @@ function gerenciarSecoes(){ // Alterar CSS desse menu
             >
               <div class="border rounded p-3 mb-3">
                 <div
-                  class="d-flex flex-column flex-md-row align-items-center gap-3"
+                  class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3"
                 >
-                 
                   <!-- Informações -->
                   <div class="flex-grow-1 d">
-                    <h5 class="mb-1">Infantil</h5>
+                    <h5 class="mb-1">Terror</h5>
 
-                    <p class="mb-0 text-muted">Sigla: IF</p>
+                    <p class="mb-0 text-muted"><strong>Sigla:</strong> TR</p>
 
-                    <p class="mb-0 text-muted">Localização: Primeiro Andar</p>
                   </div>
 
-                  <!-- Botões -->
-                  <div>
+                  <!--Botões-->
+                  <div class="d-flex flex-nowrap gap-2">
                     <div
                       class="btn btn-success"
                       data-bs-toggle="modal"
-                      data-bs-target="#modificarInformacoesSecao"
+                      data-bs-target="#modificarSecao"
                       data-stop-propagation
                     >
                       <i>
@@ -2984,9 +2974,9 @@ function gerenciarLivros(){ // Pronta
                     />
                   </div>
 
-                  <div class="col-12">
+                  <div class="col-10">
                     <label for="autorCadastroLivro" class="form-label"
-                      >Seção:</label
+                      >Autor:</label
                     >
                     <select
                       id="autorCadastroLivro"
@@ -3065,9 +3055,9 @@ function gerenciarLivros(){ // Pronta
                     />
                   </div>
 
-                  <div class="col-12">
+                  <div class="col-10">
                     <label for="autorEdicaoLivro" class="form-label"
-                      >Seção:</label
+                      >Autor:</label
                     >
                     <select
                       id="autorEdicaoLivro"
@@ -3197,7 +3187,7 @@ function gerenciarLivros(){ // Pronta
   `;
 }
 
-function gerenciarEditoras(){
+function gerenciarEditoras(){ // Pronta
    menu.innerHTML = "";
    menu.innerHTML = `
        <main class="container-fluid px-4 mt-5">
@@ -3600,4 +3590,20 @@ function gerenciarEditoras(){
       </div>
     </main>
    `;
+}
+
+function pesquisarLivros(){ // Pronta
+  menu.innerHTML = "";
+  menu.innerHTML =  `
+     <main class="container-fluid px-4 mt-5">
+           <div class="mb-4 w-100">
+             <input type="text" placeholder="Pesquisar livro..." class="form-control m-auto" name="pesquisadeLivros" id="barraPesquisaLivrosBibliotecario">
+           </div>
+           <div class="card" id="resultadosLivrosBibliotecario">
+              <div class="card-body">
+                <p>Nenhum Resultado</p>
+              </div>
+           </div>
+     </main>
+  `;
 }
