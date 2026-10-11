@@ -129,10 +129,8 @@
         <i class="fas fa-bars"></i>
 
       </button> <!--Botão de três linhas-->
-      <!-- Navbar Search-->
       
       <!-- Navbar-->
-
       <ul class="navbar-nav ms-auto me-3 me-lg-4"> <!--Imagem Perfil do Usuário-->
         <li class="nav-item dropdown">
           <a
@@ -196,7 +194,7 @@
                 class="nav-link collapsed"
                 aria-expanded="false"
                 onclick="pesquisarLivros()"
-              > <!--Gerenciamento-->
+              > <!--Pesquisa de Livros-->
                 <div class="sb-nav-link-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -232,7 +230,7 @@
                 <nav class="sb-sidenav-menu-nested nav">
 
                   <a class="nav-link"  id="autores" onclick="gerenciarAutores()">
-                    Autores <!--Sem função-->
+                    Autores <!--Tem função-->
                   </a>
 
                   <a class="nav-link"  id="bibliotecarios" onclick="gerenciarBibliotecarios()"
@@ -241,8 +239,11 @@
                   <a class="nav-link"  id="classificacoes" onclick="gerenciarClassificacoes()"
                    >Classificações</a> <!--Tem função-->
 
-                  <a class="nav-link"  id="edicoesExemplares" onclick="gerenciarExemplaresEdicoes()"
-                    >Edições/Exemplares</a> <!--Mudar função para gerenciar edições e exemplares-->
+                  <a class="nav-link"  id="exemplares" onclick="gerenciarExemplares()"
+                    >Exemplares</a> <!--Tem função-->
+
+                  <a class="nav-link" id="edicoes" onclick="gerenciarEdicoes()"
+                    >Edições</a>
 
                   <a class="nav-link"  id = "editoras" onclick="gerenciarEditoras()";
                     >Editoras</a> <!--Tem função-->
