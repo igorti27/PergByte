@@ -83,7 +83,7 @@ body {
 
 /* Menu expandido */
 .sb-sidenav-menu-nested .nav-link {
-  padding-left: 0.5rem; /* afetou principalmente a lateral das opções/*
+  padding-left: 0.5rem; /* afetou principalmente a lateral das opções*/
 }
 
 /* Área principal */
@@ -129,4 +129,4 @@ body {
   .sb-sidenav-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
-}
+

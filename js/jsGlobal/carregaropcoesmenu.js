@@ -1296,7 +1296,422 @@ function gerenciarExemplares(){ // Pronta
 };
 
 function gerenciarEdicoes(){ // Fazer função
+  menu.innerHTML  = "";
+  menu.innerHTML  = `
+  
+   <main class="container-fluid px-4 mt-5">
+            <div class="container py-5">
+      <!--Barra de Pesquisa-->
+      <div class="row justify-content-center mb-4 mt-5">
+        <div class="col-md-8">
+          <div class="input-group mb-3 d-flex gap-2">
+            <span class="input-group-text" id="gerenciamentoEdicaoLupa">
+              <i class="fas fa-search"></i>
+            </span>
+            <input
+              type="text"
+              class="form-control"
+              id="pesquisarEdicao"
+              name="pesquisadeEdicao"
+              placeholder="Edicao..."
+            />
 
+            <button
+              class="btn btn-warning fs-4 px-3"
+              data-bs-toggle="modal"
+              data-bs-target="#cadastrarEdicao"
+              id="adicionarEdicao"
+            >
+              <i
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="0.7em"
+                  height="0.7em"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M12 3.5A1.5 1.5 0 0 1 13.5 5v5.5H19a1.5 1.5 0 0 1 0 3h-5.5V19a1.5 1.5 0 0 1-3 0v-5.5H5a1.5 1.5 0 0 1 0-3h5.5V5A1.5 1.5 0 0 1 12 3.5"
+                    clip-rule="evenodd"
+                  /></svg
+              ></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Janelas-->
+
+      <!--Janela que exibe as informações-->
+      <div class="modal" tabindex="-1" id="informacoesEdicao">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Informações</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body d-flex flex-column gap-2">
+              <p class="mb-0 text-muted"><strong>Livro:</strong>As Crônicas de Nárnia</p>
+
+              <p class="mb-0 text-muted"><strong>Número da edição:</strong>5</p>
+
+              <p class="mb-0 text-muted">
+                <strong>Ano de Publicação:</strong> 2005
+              </p>
+
+              <p class="mb-0 text-muted">
+                <strong>Classificação:</strong> Infantojuvenil
+              </p>
+
+              <p class="mb-0 text-muted">
+                <strong>Número da Classificação:</strong> 0.25
+              </p>
+
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                id="modalFechar"
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Janela de confirmação de exclusão-->
+      <div class="modal" tabindex="-1" id="avisoexclusao">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Excluindo...</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body d-flex flex-column gap-2">
+              <p class="mb-0 text-muted"><strong>Livro:</strong>As Crônicas de Nárnia</p>
+
+              <p class="mb-0 text-muted"><strong>Número da edição:</strong>5</p>
+
+              <p class="mb-0 text-muted">
+                <strong>Ano de Publicação:</strong> 2005
+              </p>
+
+              <p class="mb-0 text-muted">
+                <strong>Classificação:</strong> Infantojuvenil
+              </p>
+
+              <p class="mb-0 text-muted">
+                <strong>Número da Classificação:</strong> 0.25
+              </p>
+
+              <h4>Você realmente deseja excluir esta Edição ?</h4>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button type="button" class="btn btn-primary">Excluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Janela de cadastro-->
+      <div class="modal" tabindex="-1" id="cadastrarEdicao">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cadastrando..</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form
+                action="#"
+                target="_self"
+                method="post"
+                id="formularioCadastroEdicao"
+              >
+                <div class="row d-flex flex-column g-3">
+                  <div class="col-10">
+                    <label for="livroCadastroEdicao" class="form-label"
+                      >Livro da Edição:</label
+                    >
+                    <select id="livroCadastroEdicao" name="livroCadastroEdicao">
+                      <option value="1">As Crônicas de Nárnia</option>
+                      <option value="2">Coraline</option>
+                      <option value="3">O Diário de um Banana</option>
+                    </select>
+                  </div>
+                  <div class="col-9">
+                    <label for="classificacaoCadastroEdicao" class="form-label"
+                      >Classificação da Edição:</label
+                    >
+                    <select id="classificacaoCadastroEdicao" name="classificacaoCadastroEdicao">
+                      <option value="1">Ficção Científica (0.234)</option>
+                      <option value="2">Aventura (0.335)</option>
+                      <option value="3">Ação (0.645)</option>
+                    </select>
+                  </div>
+                  <div class="col-8">
+                    <label for="editoraCadastroEdicao" class="form-label"
+                      >Editora:</label
+                    >
+                    <select id="editoraCadastroEdicao" name="editoraCadastroEdicao">
+                      <option value="1">Editora do Brasil</option>
+                      <option value="2">Editora Ancine</option>
+                      <option value="3">Editora Mil Páginas</option>
+                    </select>
+                  </div>
+                  <div class="col-5">
+                    <label for="numeroCadastroEdicao" class="form-label"
+                     >Número da Edição:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="numeroCadastroEdicao"
+                      name="numeroCadastroEdicao"
+                      required
+                    />
+                  </div>
+                  <div class="col-4">
+                    <label for="anoPublicacaoCadastroEdicao" class="form-label"
+                      >Ano de Publicação:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="anoPublicacaoCadastroEdicao"
+                      name="anoPublicaoCadastroEdicao"
+                      required
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button type="button" class="btn btn-primary">
+                Cadastrar Edição
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Janela de edição-->
+      <div class="modal" tabindex="-1" id="modificarEdicao">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cadastrando..</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form
+                action="#"
+                target="_self"
+                method="post"
+                id="formularioEdicaoEdicao"
+              >
+                 <div class="row d-flex flex-column g-3">
+                  <div class="col-10">
+                    <label for="livroEdicaoEdicao" class="form-label"
+                      >Livro da Edição:</label
+                    >
+                    <select id="livroEdicaoEdicao" name="livroEdicaoEdicao">
+                      <option value="1">As Crônicas de Nárnia</option>
+                      <option value="2">Coraline</option>
+                      <option value="3">O Diário de um Banana</option>
+                    </select>
+                  </div>
+                  <div class="col-9">
+                    <label for="classificacaoCadastroEdicao" class="form-label"
+                      >Classificação da Edição:</label
+                    >
+                    <select id="classificacaoEdicaoEdicao" name="classificacaoEdicaoEdicao">
+                      <option value="1">Ficção Científica (0.234)</option>
+                      <option value="2">Aventura (0.335)</option>
+                      <option value="3">Ação (0.645)</option>
+                    </select>
+                  </div>
+                  <div class="col-8">
+                    <label for="editoraEdicaoEdicao" class="form-label"
+                      >Editora:</label
+                    >
+                    <select id="editoraEdicaoEdicao" name="editoraEdicaoEdicao">
+                      <option value="1">Editora do Brasil</option>
+                      <option value="2">Editora Ancine</option>
+                      <option value="3">Editora Mil Páginas</option>
+                    </select>
+                  </div>
+                  <div class="col-5">
+                    <label for="numeroEdicaoEdicao" class="form-label"
+                     >Número da Edição:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="numeroEdicaoEdicao"
+                      name="numeroEdicaoEdicao"
+                      required
+                    />
+                  </div>
+                  <div class="col-4">
+                    <label for="anoPublicacaoEdicaoEdicao" class="form-label"
+                      >Ano de Publicação:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="anoPublicacaoEdicaoEdicao"
+                      name="anoPublicaoEdicaoEdicao"
+                      required
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button type="button" class="btn btn-primary">
+                Salvar Alterações
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Resultados da Pesquisa-->
+      <div class="row justify-content-center">
+        <div class="col-md-8 mt-3">
+          <div class="card shadow-sm">
+            <div
+              class="card-body"
+              id="resultadoPesquisa"
+              data-bs-toggle="modal"
+              data-bs-target="#informacoesEdicao"
+            >
+              <div class="border rounded p-3 mb-3">
+                <div
+                  class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3"
+                >
+                  <!-- Informações -->
+                  <div class="flex-grow-1 d">
+                    <h5 class="mb-1">As Crônicas de Nárnia</h5>
+
+                    <p class="mb-0 text-muted">
+                      <strong>Número de Edição:</strong>
+                      5
+                    </p>
+
+                    <p class="mb-0 text-muted">
+                      <strong>Ano de Publicação:</strong>
+                      2005
+                    </p>
+
+                  </div>
+
+                  <!--Botões-->
+                  <div class="d-flex flex-nowrap gap-2">
+                    <div
+                      class="btn btn-success"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modificarEdicao"
+                      data-stop-propagation
+                    >
+                      <i>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="2em"
+                          height="2em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            d="m19.71 8.04l-2.34 2.33l-3.75-3.75l2.34-2.33c.39-.39 1.04-.39 1.41 0l2.34 2.34c.39.37.39 1.02 0 1.41M3 17.25L13.06 7.18l3.75 3.75L6.75 21H3zM16.62 5.04l-1.54 1.54l2.34 2.34l1.54-1.54zM15.36 11L13 8.64l-9 9.02V20h2.34z"
+                          />
+                        </svg>
+                      </i>
+                    </div>
+
+                    <div
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#avisoexclusao"
+                      data-stop-propagation
+                    >
+                      <i>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="2em"
+                          height="2em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 7h16m-10 4v6m4-6v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"
+                          />
+                        </svg>
+                      </i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  `;
 }
 
 function gerenciarEstantes(){ // Pronta
@@ -2072,6 +2487,7 @@ function gerenciarSecoes(){ // Pronta
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
+          
             <span class="input-group-text" id="gerenciamentoSecaoLupa">
               <i class="fas fa-search"></i>
             </span>
@@ -2079,7 +2495,7 @@ function gerenciarSecoes(){ // Pronta
               type="text"
               class="form-control"
               id="pesquisarSecoes"
-              name="pesquisadeSecoes"
+              name="pesquisarSecoes"
               placeholder="Secao..."
             />
 
@@ -2087,7 +2503,7 @@ function gerenciarSecoes(){ // Pronta
               class="btn btn-warning fs-4 px-3"
               data-bs-toggle="modal"
               data-bs-target="#cadastrarSecao"
-              id="adicionarEstante"
+              id="adicionarSecao"
             >
               <i
                 ><svg
@@ -2438,7 +2854,7 @@ function gerenciarSecoes(){ // Pronta
       </div>
     </main>
     
-    `;
+  `;
 };
 
 function gerenciarLeitores(){ // Pronta

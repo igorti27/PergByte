@@ -1,0 +1,248 @@
+/* Tema claro*/
+[data-bs-theme="light"]{
+
+   --body: #f8f9fa;
+   --bodyText:#ffffff;
+
+   --navbarSup: #0d6efd;
+   --navbarSupText: #ffffff;
+
+   --navbarSupPerfil: #ffffff;
+   --navbarSupPerfilBorder: #dbe5f1;
+   --navbarSupPerfilText: #ffffff;
+   --navbarSupPerfilHover: #e9f2ff;
+
+   --navbarLat: #0b2545;
+   --navbarLatText: #ffffff;
+   --navbarLatHover:  #1d4f91; 
+
+   --navbarLatFooter: #1d4f91;
+   --navbarLatFooterHover:  #0b2545;
+
+   --conteudoPrincipal: #f8f9fa;
+  
+   --ficha: #ffffff;
+   --fichaText: #000000;
+   --fichaBorder: #2f2f2f;
+   --fichaShadown: rgba(0, 0, 0, 0.08);
+
+   --input: #ffffff;
+   --inputText: #000000;
+   --inputBorder: #2f2f2f;
+   --inputBorderFocus:#0d6efd;
+
+   --formulario: #ffffff;
+   --formularioTituloText: #000000;
+   --formularioBorder: #2f2f2f;
+
+}
+
+[data-bs-theme="dark"]{
+
+   --body: #f8f9fa;
+   --bodyText:#ffffff;
+
+   --navbarSup: #0d6efd;
+   --navbarSupText: #ffffff;
+
+   --navbarSupPerfil: #ffffff;
+   --navbarSupPerfilBorder: #dbe5f1;
+   --navbarSupPerfilText: #ffffff;
+   --navbarSupPerfilHover: #e9f2ff;
+
+   --navbarLat: #0b2545;
+   --navbarLatText: #ffffff;
+   --navbarLatHover:  #1d4f91; 
+
+   --navbarLatFooter: #1d4f91;
+   --navbarLatFooterHover:  #0b2545;
+
+   --conteudoPrincipal: #f8f9fa;
+  
+   --ficha: #ffffff;
+   --fichaText: #000000;
+   --fichaBorder: #2f2f2f;
+   --fichaShadown: rgba(0, 0, 0, 0.08);
+
+   --input: #ffffff;
+   --inputText: #000000;
+   --inputBorder: #2f2f2f;
+   --inputBorderFocus:#0d6efd;
+
+   --formulario: #ffffff;
+   --formularioTituloText: #000000;
+   --formularioBorder: #2f2f2f;
+
+}
+
+body{
+
+    background-color: var(--body);
+
+    color: var(--bodyText);
+
+    transition: all 0.3 ease; /* Controla a transição */ 
+
+}
+
+/*Menu superior*/
+.sb-topnav{ 
+   
+    background-color: var(--navbarSup) !important;
+
+    color: var(--navbarSupText); /* Cor dos textos */
+
+}
+
+/* Textos dentro dos elementos, que estão no menu superior */
+.sb-topnav .navbar-brand, /*Texto "Pergbyte", dentro de <p></p>*/
+.sb-topnav .nav-link,/*icone dentro de <a></a>*/
+.sb-topnav i /*icones*/ {
+
+    color: var(--navbarSupText) !important;
+
+}
+
+/* Dropdown (Perfil, Opções de Temas e Sair) */
+.dropdown-menu { /* Fundo da janela de escolha e sua borda */ 
+
+    background-color: var(--navbarSupPerfil);
+
+    border-color: var(--navbarSupPerfilBorder);
+
+  }
+
+  .dropdown-item { /* Cor do texto das opções */
+
+    color: var(--navbarSupPerfilText);
+
+  }
+
+  .dropdown-item:hover { /* Fundo das opções quando estiver por cima */
+
+    background-color: var(--navbarSupPerfilHover);
+
+  }
+
+/*Menu lateral*/
+.sb-sidenav {
+
+  background-color: var(--navbarLat) !important; /* Cor de fundo do menu lateral */
+
+}
+
+.sb-sidenav .nav-link, /*Textos "Pesquisa de Livros" e "Gerenciamento"*/
+.sb-sidenav .sb-sidenav-footer /*Texto "Sair"*/{
+
+  color: var(--sidebar-text) !important;
+  
+}
+
+.sb-sidenav .nav-link:hover { /* Quando passar por cima das Opções*/
+
+  background-color: var(--navbarLatHover);
+
+  color: #fff !important; /* Texto das opções */
+
+  border-radius: 8px; /* Garantes bordas arredondadas*/
+
+}
+
+/* Menu expandido */
+.sb-sidenav-menu-nested .nav-link {
+
+  padding-left: 0.5rem; 
+  /* Afeta o espaçamento interno da esquerda das opções */ 
+
+}
+
+  /* Rodapé menu lateral */
+  .sb-sidenav-footer {
+
+    background-color: var(--navbarLatFooter);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  }
+
+.sb-sidenav-footer:hover{
+
+    background-color: var(--navbarLatFooterHover);
+
+}
+
+/* Contéudo Principal */
+
+#layoutSidenav_content{
+
+    background-color: var(--conteudoPrincipal);
+
+}
+
+/* Fichas de pesquisas */
+
+.card {
+
+  background-color: var(--ficha); /* Cor de fundo */
+  
+  color: var(--fichaText); /* Cor dos textos */
+
+  border: 1px solid var(--fichaBorder); /* Borda */
+
+  border-radius: 18px;
+
+  box-shadow: 0px 6px 20px var(--fichaShadown);
+
+}
+
+.card-body{
+    color: var(--fichaText);
+}
+
+/* Formulários */
+
+.modal-content {
+  background: var(--formulario);
+
+  color: var(--formularioTituloText);
+
+  border: 1px solid var(--formularioBorder);
+
+  border-radius: 18px;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--formularioBorder);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--formularioBorder);
+}
+
+.modal-title {
+  color: var(--formularioTituloText);
+}
+
+/* Campos input */
+
+.form-control{
+
+    background-color: var(--input);
+
+    color: var(--inputText);
+
+    border: 1px solid var(--inputBorder);
+
+    border-radius: 18px;
+}
+
+.form-control:focus{
+     background: var(--input);
+
+     color: var(--inputText);
+
+     border-color: var(--inputBorderFocus);
+
+     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.2);
+}
+
