@@ -10,12 +10,12 @@ function gerenciarBibliotecarios(){ // Pronta
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoBibliotecariosLupa">
+            <span class="input-group-text lupa" id="gerenciamentoBibliotecariosLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               placeholder="Bibliotecários..."
               id="pesquisarBibliotecarios"
               name="pesquisadeBibliotecarios"
@@ -369,12 +369,12 @@ function gerenciarEmprestimos(){ // Pronta
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-9">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoEmprestimosLupa">
+            <span class="input-group-text lupa" id="gerenciamentoEmprestimosLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               placeholder="Empréstimo.."
               id="pesquisarEmprestimo"
               name="pesquisadeEmprestimo"
@@ -832,12 +832,12 @@ function gerenciarExemplares(){ // Pronta
       <div class="row mb-4 mt-5">
         <div class="col-md-8 ms-auto me-auto mb-4">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoExemplarLupa">
+            <span class="input-group-text lupa" id="gerenciamentoExemplarLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               placeholder="Exemplares..."
               id="pesquisarExemplares"
               name="pesquisadeExemplares"
@@ -1305,12 +1305,12 @@ function gerenciarEdicoes(){ // Fazer função
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoEdicaoLupa">
+            <span class="input-group-text lupa" id="gerenciamentoEdicaoLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               id="pesquisarEdicao"
               name="pesquisadeEdicao"
               placeholder="Edicao..."
@@ -1724,12 +1724,12 @@ function gerenciarEstantes(){ // Pronta
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoEstantesLupa">
+            <span class="input-group-text lupa" id="gerenciamentoEstantesLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               id="pesquisarEstantes"
               name="pesquisadeEstantes"
               placeholder="Estante..."
@@ -2164,12 +2164,12 @@ function gerenciarClassificacoes(){ // Pronta
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoClassificacaoLupa">
+            <span class="input-group-text lupa" id="gerenciamentoClassificacaoLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               placeholder="Classificação..."
               id="pesquisarClassificacao"
               name="barraPesquisadeClassificacao"
@@ -2488,12 +2488,12 @@ function gerenciarSecoes(){ // Pronta
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
           
-            <span class="input-group-text" id="gerenciamentoSecaoLupa">
+            <span class="input-group-text lupa" id="gerenciamentoSecaoLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               id="pesquisarSecoes"
               name="pesquisarSecoes"
               placeholder="Secao..."
@@ -2866,12 +2866,12 @@ function gerenciarLeitores(){ // Pronta
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoLeitoresLupa">
+            <span class="input-group-text lupa" id="gerenciamentoLeitoresLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               placeholder="Leitores..."
               id="pesquisarLeitores"
               name="pesquisadeLeitores"
@@ -3215,12 +3215,12 @@ function gerenciarLivros(){ // Pronta
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoLivrosLupa">
+            <span class="input-group-text lupa" id="gerenciamentoLivrosLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               id="pesquisarLivros"
               name="pesquisadeLivros"
               placeholder="Título..."
@@ -3614,18 +3614,18 @@ function gerenciarLivros(){ // Pronta
 function gerenciarEditoras(){ // Pronta
    menu.innerHTML = "";
    menu.innerHTML = `
-       <main class="container-fluid px-4 mt-5">
-            <div class="container py-5">
+      <main class="container-fluid px-4 mt-5">
+        <div class="container py-5">
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoEditorasLupa">
+            <span class="input-group-text lupa" id="gerenciamentoEditorasLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               id="pesquisarEditoras"
               name="pesquisadeEditoras"
               placeholder="Nome..."
@@ -3635,7 +3635,7 @@ function gerenciarEditoras(){ // Pronta
               class="btn btn-warning fs-4 px-3"
               data-bs-toggle="modal"
               data-bs-target="#cadastrarEditora"
-              id="adicionarLivros"
+              id="adicionarEditoras"
             >
               <i
                 ><svg
@@ -4042,12 +4042,12 @@ function gerenciarAutores(){ // Feita
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
           <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text" id="gerenciamentoAutoresLupa">
+            <span class="input-group-text lupa" id="gerenciamentoAutoresLupa">
               <i class="fas fa-search"></i>
             </span>
             <input
               type="text"
-              class="form-control"
+              class="form-control barraPesquisaGerenciamento"
               id="pesquisarAutores"
               name="pesquisadeAutores"
               placeholder="Autor..."

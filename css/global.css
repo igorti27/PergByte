@@ -9,21 +9,30 @@
 
    --navbarSupPerfil: #ffffff;
    --navbarSupPerfilBorder: #dbe5f1;
-   --navbarSupPerfilText: #ffffff;
+   --navbarSupPerfilText: #000000;
+   --navbarSupPerfilItem: #b5b5b5;
    --navbarSupPerfilHover: #e9f2ff;
 
    --navbarLat: #0b2545;
    --navbarLatText: #ffffff;
    --navbarLatHover:  #1d4f91; 
 
-   --navbarLatFooter: #1d4f91;
-   --navbarLatFooterHover:  #0b2545;
+   --navbarLatFooter: #0b2545;
+   --navbarLatFooterHover:  #1d4f91;
 
    --conteudoPrincipal: #f8f9fa;
+
+  /* Barra de Pesquisa */ 
+   --barraPesquisaGerenciamentoPlaceholder: #6c757d;
+   --barraPesquisaGerencaimentoBG: #ffffff;
+   --barraPesquisaGerencaimentoColor: #212529;
+   --barraPesquisaGerencaimentoBorder: #dbe5f1;
+   --barraPesquisaGerencaimentoBorderColor: #0d6efd;
+  /*----------------------------------------------------*/
   
    --ficha: #ffffff;
    --fichaText: #000000;
-   --fichaBorder: #2f2f2f;
+   --fichaBorder: #dde4ef;
    --fichaShadown: rgba(0, 0, 0, 0.08);
 
    --input: #ffffff;
@@ -33,45 +42,91 @@
 
    --formulario: #ffffff;
    --formularioTituloText: #000000;
+   --formularioDados: #000000;
    --formularioBorder: #2f2f2f;
+   --botoesformularios: #0d6efd;
+   --botoesformuariosHover: #0b5ed7;
+   --botoesCancelamento: #FF0F0F;
+   --botoesCancelamentoHover: #D0342C;
+
+   --botaoEdicao: #0d6efd;
+   --botaoEdicaoHover: #0b5ed7;
+
+   --botaoCadastroPesquisa: #0d6efd;
+   --botaoCadastroPesquisaHover: #0b5ed7;
+
+   --selectTextareaBG: #FFFFFF;
+   --selectTextareColor: #212529;
+   --selectTextareaBorder: #dbe5f1;
 
 }
 
 [data-bs-theme="dark"]{
 
-   --body: #f8f9fa;
+   --body: #181818;
    --bodyText:#ffffff;
 
-   --navbarSup: #0d6efd;
+   --navbarSup: #000000;
    --navbarSupText: #ffffff;
 
-   --navbarSupPerfil: #ffffff;
-   --navbarSupPerfilBorder: #dbe5f1;
+   --navbarSupPerfil: #000000;
+   --navbarSupPerfilBorder: #2f2f2f;
    --navbarSupPerfilText: #ffffff;
-   --navbarSupPerfilHover: #e9f2ff;
+   --navbarSupPerfilItem: #ffffff;
+   --navbarSupPerfilHover: #176ef1;
 
-   --navbarLat: #0b2545;
+   --navbarLat: #000000;
    --navbarLatText: #ffffff;
-   --navbarLatHover:  #1d4f91; 
+   --navbarLatHover:  #0d6efd; 
 
-   --navbarLatFooter: #1d4f91;
-   --navbarLatFooterHover:  #0b2545;
+   --navbarLatFooter: #000000;
+   --navbarLatFooterHover:  #0d6efd;
 
-   --conteudoPrincipal: #f8f9fa;
-  
-   --ficha: #ffffff;
-   --fichaText: #000000;
+   --conteudoPrincipal: #181818;
+
+   /* Barra de Pesquisa */ 
+   --barraPesquisaGerenciamentoPlaceholder: #b8b8b8;
+   --barraPesquisaGerencaimentoBG: #1f1f1f;
+   --barraPesquisaGerencaimentoColor: #ffffff;
+   --barraPesquisaGerencaimentoBorder: #303030;
+   --barraPesquisaGerencaimentoBorderColor: #4da3ff;
+  /*----------------------------------------------------*/
+
+   /* Ficha de informações */
+   --ficha: #242424;
+   --fichaText: #ffffff;
    --fichaBorder: #2f2f2f;
-   --fichaShadown: rgba(0, 0, 0, 0.08);
+   --fichaShadown: rgba(0, 0, 0, 0.45);
+   /*-------------------------------------*/
 
-   --input: #ffffff;
-   --inputText: #000000;
+   --input: #292929;
+   --inputText: #ffffff;
    --inputBorder: #2f2f2f;
    --inputBorderFocus:#0d6efd;
 
-   --formulario: #ffffff;
-   --formularioTituloText: #000000;
+   /* Formulários */
+   --formulario: #000000;
+   --formularioTituloText: #ffffff;
+   --formularioDados: #ffffff;
    --formularioBorder: #2f2f2f;
+   /*--------------------------------*/
+
+   --botoesformularios: #4da3ff;
+   --botoesformuariosHover: #0d6efd;
+   --botoesCancelamento: #FF0F0F;
+   --botoesCancelamentoHover: #D0342C;
+
+   /* Botões de Cadastro e Pesquisa */
+   --botaoCadastroPesquisa: #4da3ff;
+   --botaoCadastroPesquisaHover: #0d6efd;
+  /*---------------------------------------*/
+
+   --botaoEdicao: #4da3ff;
+   --botaoEdicaoHover: #0d6efd;
+
+   --selectTextareaBG: #292929;
+   --selectTextareColor: #ffffff;
+   --selectTextareaBorder: #2f2f2f;
 
 }
 
@@ -99,7 +154,7 @@ body{
 .sb-topnav .nav-link,/*icone dentro de <a></a>*/
 .sb-topnav i /*icones*/ {
 
-    color: var(--navbarSupText) !important;
+    color: var(--navbarSupText);
 
 }
 
@@ -115,6 +170,12 @@ body{
   .dropdown-item { /* Cor do texto das opções */
 
     color: var(--navbarSupPerfilText);
+
+  }
+
+  .dropdown-item i{
+
+    color: var(--navbarSupPerfilItem);
 
   }
 
@@ -174,8 +235,34 @@ body{
 /* Contéudo Principal */
 
 #layoutSidenav_content{
-
     background-color: var(--conteudoPrincipal);
+}
+
+.barraPesquisaGerenciamento{
+
+  background-color: var(--barraPesquisaGerencaimentoBG);
+
+  color: var(--barraPesquisaGerencaimentoColor);
+
+  border: 1px solid var(--barraPesquisaGerencaimentoBorder);
+
+  border-radius: 12px;
+
+  min-height: 54px;
+}
+
+.barraPesquisaGerenciamento::placeholder{
+
+  color: var(--barraPesquisaGerenciamentoPlaceholder);
+
+}
+
+.barraPesquisaGerenciamento:focus{
+   background-color: var(--barraPesquisaGerencaimentoBG);
+
+   color: var(--barraPesquisaGerencaimentoColor);
+
+   border-color: var(--barraPesquisaGerencaimentoBorderColor);
 
 }
 
@@ -201,7 +288,7 @@ body{
 
 /* Formulários */
 
-.modal-content {
+.modal-content { /* Conteúdo/Corpo */
   background: var(--formulario);
 
   color: var(--formularioTituloText);
@@ -211,15 +298,19 @@ body{
   border-radius: 18px;
 }
 
-.modal-header {
+.modal-content label{
+  color: var(--formularioTituloText);
+}
+
+.modal-header { /* Cabeçalho */
   border-bottom: 1px solid var(--formularioBorder);
 }
 
-.modal-footer {
+.modal-footer { /* Rodapé */
   border-top: 1px solid var(--formularioBorder);
 }
 
-.modal-title {
+.modal-title { /* Título */
   color: var(--formularioTituloText);
 }
 
@@ -246,3 +337,89 @@ body{
      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.2);
 }
 
+/* Botões de edição, cadastro, exclusão e confirmação */
+
+.btn-success, .btn-primary, .btn-danger{
+
+   border: none;
+
+   border-radius: 12px;
+
+}
+
+.btn-success{ /* Botão de Edição */
+  
+   background-color: var(--botaoEdicao);
+
+}
+
+.btn-success:hover{
+
+  background-color: var(--botaoEdicaoHover);
+
+}
+
+.btn-primary{ /* Botão de dos formulários, retirando os botões de cancelamento */
+
+  background-color: var(--botoesformularios);
+
+}
+
+.btn-primary:hover{
+
+  background-color: var(--botoesformuariosHover);
+
+}
+
+.btn-danger{ /* Botões de cancelamento */
+
+  background-color: var(--botoesCancelamento);
+
+}
+
+.btn-danger:hover{
+
+  background-color: var(--botoesCancelamentoHover);
+
+}
+
+
+.lupa, .btn-warning{
+
+  background-color: var(--botaoCadastroPesquisa);
+
+  color: white;
+
+  border: none;
+
+  border-radius: 12px;
+
+}
+
+.lupa:hover, .btn-warning{
+  
+  background-color: var(--botaoCadastroPesquisaHover);
+
+}
+
+select, textarea{
+
+  border-radius: 12px;
+
+  padding: 0.75rem;
+
+  color: var(--selectTextareColor);
+
+  background-color: var(--selectTextareaBG);
+
+  border: 1px solid var(--formularioBorder);
+
+}
+
+textarea{
+  resize: none;
+}
+
+select{
+  min-height: 45px;
+}
