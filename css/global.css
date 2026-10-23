@@ -73,7 +73,7 @@
    --navbarSupPerfilBorder: #2f2f2f;
    --navbarSupPerfilText: #ffffff;
    --navbarSupPerfilItem: #ffffff;
-   --navbarSupPerfilHover: #176ef1;
+   --navbarSupPerfilHover: #0964ed;
 
    --navbarLat: #000000;
    --navbarLatText: #ffffff;
@@ -151,8 +151,7 @@ body{
 
 /* Textos dentro dos elementos, que estão no menu superior */
 .sb-topnav .navbar-brand, /*Texto "Pergbyte", dentro de <p></p>*/
-.sb-topnav .nav-link,/*icone dentro de <a></a>*/
-.sb-topnav i /*icones*/ {
+.sb-topnav .nav-link /*icone dentro de <a></a>*/{
 
     color: var(--navbarSupText);
 
@@ -182,6 +181,7 @@ body{
   .dropdown-item:hover { /* Fundo das opções quando estiver por cima */
 
     background-color: var(--navbarSupPerfilHover);
+    color: var(--navbarSupPerfilText);
 
   }
 
@@ -320,7 +320,9 @@ body{
 
     background-color: var(--input);
 
-    color: var(--inputText);
+    color: var(--inputText) !important;  
+    /* O !important faz as informações ficarem da cor branca,no tema escuro, sobrescrevendo o color dos inputs de todos os arquivos css*/
+    /* Então, problema de informações mesclando com fundo do input, no tema escuro, resolvido com sucesso */
 
     border: 1px solid var(--inputBorder);
 
@@ -408,7 +410,7 @@ select, textarea{
 
   padding: 0.75rem;
 
-  color: var(--selectTextareColor);
+  color: var(--selectTextareColor) !important;
 
   background-color: var(--selectTextareaBG);
 
@@ -422,4 +424,8 @@ textarea{
 
 select{
   min-height: 45px;
+}
+
+.sb-topnav i {
+   color: var(--navbarSupPerfilItem);
 }

@@ -59,8 +59,7 @@ body {
 }
 
 .sb-topnav .navbar-brand,
-.sb-topnav .nav-link,
-.sb-topnav i {
+.sb-topnav .nav-link{ 
   color: var(--navbar-text) !important;
 }
 
