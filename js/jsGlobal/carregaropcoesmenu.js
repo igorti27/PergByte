@@ -1,7 +1,7 @@
 const menu = document.getElementById("layoutSidenav_content");
 
 
-function gerenciarBibliotecarios(){ // Pronta
+function gerenciarBibliotecarios(){ // Pronta e transformado
   menu.innerHTML = "";
   menu.innerHTML = `
         <main class="container-fluid px-4 mt-5">
@@ -9,10 +9,10 @@ function gerenciarBibliotecarios(){ // Pronta
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
-          <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text lupa" id="gerenciamentoBibliotecariosLupa">
+          <form action="#" method="GET" class="input-group mb-3 d-flex gap-2">
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoBibliotecariosLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -26,6 +26,7 @@ function gerenciarBibliotecarios(){ // Pronta
               id="adicionarBibliotecario"
               data-bs-toggle="modal"
               data-bs-target="#cadastrarBibliotecario"
+              type="button"
             >
               <i
                 ><svg
@@ -43,7 +44,7 @@ function gerenciarBibliotecarios(){ // Pronta
                   /></svg
               ></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -360,7 +361,7 @@ function gerenciarBibliotecarios(){ // Pronta
 `;
 };
 
-function gerenciarEmprestimos(){ // Pronta
+function gerenciarEmprestimos(){ // Pronta e transformado
   menu.innerHTML = "";
   menu.innerHTML = `
     <main class="container-fluid px-4 mt-5">
@@ -368,10 +369,11 @@ function gerenciarEmprestimos(){ // Pronta
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-9">
-          <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text lupa" id="gerenciamentoEmprestimosLupa">
+          <form action="#" method="GET" class="input-group mb-3 d-flex gap-2">
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoEmprestimosLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
+
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -385,6 +387,7 @@ function gerenciarEmprestimos(){ // Pronta
               data-bs-toggle="modal"
               data-bs-target="#cadastrarEmprestimo"
               id="adicionarEmprestimo"
+              type="button"
             >
               <i
                 ><svg
@@ -402,7 +405,7 @@ function gerenciarEmprestimos(){ // Pronta
                   /></svg
               ></i>
             </button>
-          </div>
+          </fo>
         </div>
       </div>
 
@@ -823,7 +826,7 @@ function gerenciarEmprestimos(){ // Pronta
    </div>`;
 }; 
 
-function gerenciarExemplares(){ // Pronta
+function gerenciarExemplares(){ // Pronta e transformado
   menu.innerHTML = "";
   menu.innerHTML = `
   <main class="container-fluid px-4 mt-5">
@@ -831,10 +834,10 @@ function gerenciarExemplares(){ // Pronta
       <!--Barra de Pesquisa-->
       <div class="row mb-4 mt-5">
         <div class="col-md-8 ms-auto me-auto mb-4">
-          <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text lupa" id="gerenciamentoExemplarLupa">
+          <form action="#" method="GET" class="input-group mb-3 d-flex gap-2">
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoExemplarLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -848,6 +851,7 @@ function gerenciarExemplares(){ // Pronta
               data-bs-toggle="modal"
               data-bs-target="#cadastrarExemplar"
               id="adicionarExemplar"
+              type="button"
             >
               <i>
                 <svg
@@ -865,7 +869,7 @@ function gerenciarExemplares(){ // Pronta
                   /></svg
               ></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -1295,7 +1299,7 @@ function gerenciarExemplares(){ // Pronta
   `;
 };
 
-function gerenciarEdicoes(){ // Fazer função
+function gerenciarEdicoes(){ // Pronta e transformado
   menu.innerHTML  = "";
   menu.innerHTML  = `
   
@@ -1304,10 +1308,10 @@ function gerenciarEdicoes(){ // Fazer função
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
-          <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text lupa" id="gerenciamentoEdicaoLupa">
+          <form action="#" method="GET" class="input-group mb-3 d-flex gap-2">
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoEdicaoLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -1321,6 +1325,7 @@ function gerenciarEdicoes(){ // Fazer função
               data-bs-toggle="modal"
               data-bs-target="#cadastrarEdicao"
               id="adicionarEdicao"
+              type="button"
             >
               <i
                 ><svg
@@ -1338,7 +1343,7 @@ function gerenciarEdicoes(){ // Fazer função
                   /></svg
               ></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -1466,16 +1471,6 @@ function gerenciarEdicoes(){ // Fazer função
                       <option value="3">O Diário de um Banana</option>
                     </select>
                   </div>
-                  <div class="col-9">
-                    <label for="classificacaoCadastroEdicao" class="form-label"
-                      >Classificação da Edição:</label
-                    >
-                    <select id="classificacaoCadastroEdicao" name="classificacaoCadastroEdicao">
-                      <option value="1">Ficção Científica (0.234)</option>
-                      <option value="2">Aventura (0.335)</option>
-                      <option value="3">Ação (0.645)</option>
-                    </select>
-                  </div>
                   <div class="col-8">
                     <label for="editoraCadastroEdicao" class="form-label"
                       >Editora:</label
@@ -1558,16 +1553,6 @@ function gerenciarEdicoes(){ // Fazer função
                       <option value="1">As Crônicas de Nárnia</option>
                       <option value="2">Coraline</option>
                       <option value="3">O Diário de um Banana</option>
-                    </select>
-                  </div>
-                  <div class="col-9">
-                    <label for="classificacaoCadastroEdicao" class="form-label"
-                      >Classificação da Edição:</label
-                    >
-                    <select id="classificacaoEdicaoEdicao" name="classificacaoEdicaoEdicao">
-                      <option value="1">Ficção Científica (0.234)</option>
-                      <option value="2">Aventura (0.335)</option>
-                      <option value="3">Ação (0.645)</option>
                     </select>
                   </div>
                   <div class="col-8">
@@ -1714,7 +1699,7 @@ function gerenciarEdicoes(){ // Fazer função
   `;
 }
 
-function gerenciarEstantes(){ // Pronta
+function gerenciarEstantes(){ // Pronta e transformado
   menu.innerHTML = "";
   menu.innerHTML = `
      
@@ -1723,10 +1708,10 @@ function gerenciarEstantes(){ // Pronta
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
-          <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text lupa" id="gerenciamentoEstantesLupa">
+          <form action="#" method="GET" class="input-group mb-3 d-flex gap-2">
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoEstantesLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -1740,6 +1725,7 @@ function gerenciarEstantes(){ // Pronta
               data-bs-toggle="modal"
               data-bs-target="#cadastrarEstante"
               id="adicionarEstante"
+              type="button"
             >
               <i
                 ><svg
@@ -1757,7 +1743,7 @@ function gerenciarEstantes(){ // Pronta
                   /></svg
               ></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -2154,19 +2140,19 @@ function gerenciarEstantes(){ // Pronta
   `;
 };
 
-function gerenciarClassificacoes(){ // Pronta
+function gerenciarClassificacoes(){ // Pronta e transformado
   menu.innerHTML = "";
   menu.innerHTML = ` 
      
-        <main class="container-fluid px-4 mt-5">
+    <main class="container-fluid px-4 mt-5">
            <div class="container py-5">
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
-          <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text lupa" id="gerenciamentoClassificacaoLupa">
+          <form action="#" method="GET" class="input-group mb-3 d-flex gap-2">
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoClassificacaoLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -2175,7 +2161,7 @@ function gerenciarClassificacoes(){ // Pronta
               name="barraPesquisadeClassificacao"
             />
 
-            <button class="btn btn-warning fs-4 px-3"  data-bs-toggle="modal"
+            <button type="button" class="btn btn-warning fs-4 px-3"  data-bs-toggle="modal"
             data-bs-target="#cadastrarClassificacao" id="adicionarClassificacao">
               <i
                 ><svg
@@ -2194,7 +2180,7 @@ function gerenciarClassificacoes(){ // Pronta
                   </svg
               ></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -2477,7 +2463,7 @@ function gerenciarClassificacoes(){ // Pronta
   `;
 };
 
-function gerenciarSecoes(){ // Pronta
+function gerenciarSecoes(){ // Pronta e transformado
   menu.innerHTML = "";
   menu.innerHTML = `
      
@@ -2486,11 +2472,11 @@ function gerenciarSecoes(){ // Pronta
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
-          <div class="input-group mb-3 d-flex gap-2">
+          <form class="input-group mb-3 d-flex gap-2">
           
-            <span class="input-group-text lupa" id="gerenciamentoSecaoLupa">
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoSecaoLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -2504,6 +2490,7 @@ function gerenciarSecoes(){ // Pronta
               data-bs-toggle="modal"
               data-bs-target="#cadastrarSecao"
               id="adicionarSecao"
+              type="button"
             >
               <i
                 ><svg
@@ -2521,7 +2508,7 @@ function gerenciarSecoes(){ // Pronta
                   /></svg
               ></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -2857,7 +2844,7 @@ function gerenciarSecoes(){ // Pronta
   `;
 };
 
-function gerenciarLeitores(){ // Pronta
+function gerenciarLeitores(){ // Pronta e transformado
   menu.innerHTML = "";
   menu.innerHTML = `
       <main class="container-fluid px-4 mt-5">
@@ -2865,10 +2852,11 @@ function gerenciarLeitores(){ // Pronta
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
-          <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text lupa" id="gerenciamentoLeitoresLupa">
+          <form action="#" method="GET" class="input-group mb-3 d-flex gap-2">
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoLeitoresLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
+
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -2877,7 +2865,7 @@ function gerenciarLeitores(){ // Pronta
               name="pesquisadeLeitores"
             />
 
-            <button class="btn btn-warning fs-4 px-3" id="adicionarLeitor" data-bs-toggle="modal" data-bs-target="#cadastrarLeitor">
+            <button type="button" class="btn btn-warning fs-4 px-3" id="adicionarLeitor" data-bs-toggle="modal" data-bs-target="#cadastrarLeitor">
               <i
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -2894,7 +2882,8 @@ function gerenciarLeitores(){ // Pronta
                   /></svg
               ></i>
             </button>
-          </div>
+
+          </form>
         </div>
       </div>
 
@@ -3205,7 +3194,7 @@ function gerenciarLeitores(){ // Pronta
     `;
 };
 
-function gerenciarLivros(){ // Pronta
+function gerenciarLivros(){ // Pronta e transformado
   menu.innerHTML = "";
   menu.innerHTML = `
          
@@ -3214,10 +3203,11 @@ function gerenciarLivros(){ // Pronta
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
-          <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text lupa" id="gerenciamentoLivrosLupa">
+          <form class="input-group mb-3 d-flex gap-2">
+           
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoLivrosLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -3231,6 +3221,7 @@ function gerenciarLivros(){ // Pronta
               data-bs-toggle="modal"
               data-bs-target="#cadastrarLivro"
               id="adicionarLivros"
+              type="button"
             >
               <i
                 ><svg
@@ -3248,7 +3239,7 @@ function gerenciarLivros(){ // Pronta
                   /></svg
               ></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -3269,6 +3260,8 @@ function gerenciarLivros(){ // Pronta
             </div>
             <div class="modal-body d-flex flex-column gap-2">
               <p class="mb-0 text-muted"><strong>Título:</strong> As Crônicas de Nárnia </p>
+
+              <p class="mb-0 text-muted"><strong>Classificação:</strong> X </p>
 
               <p class="mb-0 text-muted"><strong>Autor:</strong> C.S Lewis </p>
 
@@ -3323,6 +3316,8 @@ function gerenciarLivros(){ // Pronta
             </div>
             <div class="modal-body d-flex flex-column gap-2">
               <p class="mb-0 text-muted"><strong>Título:</strong> As Crônicas de Nárnia </p>
+
+              <p class="mb-0 text-muted"><strong>Classificação:</strong> X </p>
 
               <p class="mb-0 text-muted"><strong>Autor:</strong> C.S Lewis </p>
 
@@ -3397,6 +3392,17 @@ function gerenciarLivros(){ // Pronta
                       required
                     />
                   </div>
+
+                   <div class="col-9">
+                    <label for="classificacaoCadastroLivro" class="form-label"
+                      >Classificação:</label
+                    >
+                    <select id="classificacaoCadastroLivro" name="classificacaoCadastroLivro">
+                      <option value="1">Ficção Científica (0.234)</option>
+                      <option value="2">Aventura (0.335)</option>
+                      <option value="3">Ação (0.645)</option>
+                    </select>
+                   </div>
 
                   <div class="col-10">
                     <label for="autorCadastroLivro" class="form-label"
@@ -3478,7 +3484,16 @@ function gerenciarLivros(){ // Pronta
                       required
                     />
                   </div>
-
+                  <div class="col-9">
+                    <label for="classificacaoEdicaoLivro" class="form-label"
+                      >Classificação:</label
+                    >
+                    <select id="classificacaoEdicaoLivro" name="classificacaoEdicaoLivro">
+                      <option value="1">Ficção Científica (0.234)</option>
+                      <option value="2">Aventura (0.335)</option>
+                      <option value="3">Ação (0.645)</option>
+                    </select>
+                  </div>
                   <div class="col-10">
                     <label for="autorEdicaoLivro" class="form-label"
                       >Autor:</label
@@ -3611,7 +3626,7 @@ function gerenciarLivros(){ // Pronta
   `;
 }
 
-function gerenciarEditoras(){ // Pronta
+function gerenciarEditoras(){ // Pronta e transformado
    menu.innerHTML = "";
    menu.innerHTML = `
       <main class="container-fluid px-4 mt-5">
@@ -3619,10 +3634,10 @@ function gerenciarEditoras(){ // Pronta
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
-          <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text lupa" id="gerenciamentoEditorasLupa">
+          <form action="#" method="GET" class="input-group mb-3 d-flex gap-2">
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoEditorasLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -3636,6 +3651,7 @@ function gerenciarEditoras(){ // Pronta
               data-bs-toggle="modal"
               data-bs-target="#cadastrarEditora"
               id="adicionarEditoras"
+              type="button"
             >
               <i
                 ><svg
@@ -3653,7 +3669,7 @@ function gerenciarEditoras(){ // Pronta
                   /></svg
               ></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -4032,7 +4048,7 @@ function pesquisarLivros(){ // Pronta
   `;
 }
 
-function gerenciarAutores(){ // Feita 
+function gerenciarAutores(){ // Pronta e transformado
   menu.innerHTML = "";
   menu.innerHTML =  `
     
@@ -4041,10 +4057,10 @@ function gerenciarAutores(){ // Feita
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
-          <div class="input-group mb-3 d-flex gap-2">
-            <span class="input-group-text lupa" id="gerenciamentoAutoresLupa">
+          <form action="#" method="GET" class="input-group mb-3 d-flex gap-2">
+            <button type="submit" class="input-group-text lupa" id="gerenciamentoAutoresLupa">
               <i class="fas fa-search"></i>
-            </span>
+            </button>
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
@@ -4058,6 +4074,7 @@ function gerenciarAutores(){ // Feita
               data-bs-toggle="modal"
               data-bs-target="#cadastrarAutor"
               id="adicionarAutor"
+              type="button"
             >
               <i
                 ><svg
@@ -4075,7 +4092,7 @@ function gerenciarAutores(){ // Feita
                   /></svg
               ></i>
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -4213,18 +4230,6 @@ function gerenciarAutores(){ // Feita
                       required
                     />
                   </div>
-                  <div class="col-9">
-                    <label for="apelidoCadastroAutor" class="form-label"
-                      >Apelido:</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="apelidoCadastroAutor"
-                      name="apelidoCadastroAutor"
-                      required
-                    />
-                  </div>
                   <div class="col-8">
                     <label for="nacionalidadeCadastroAutor" class="form-label"
                       >Nacionalidade:</label
@@ -4309,18 +4314,6 @@ function gerenciarAutores(){ // Feita
                       class="form-control"
                       id="nomeEdicaoAutor"
                       name="nomeEdicaoAutor"
-                      required
-                    />
-                  </div>
-                  <div class="col-9">
-                    <label for="apelidoEdicaoAutor" class="form-label"
-                      >Apelido:</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="apelidoEdicaoAutor"
-                      name="apelidoEdicaoAutor"
                       required
                     />
                   </div>
