@@ -161,15 +161,19 @@ function gerenciarBibliotecarios(){ // Pronta e transformado
                      maxlength="14"
                      required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-10">
+                   <label for="imagemEdicaoBibliotecario" class="form-label">Imagem de Perfil:</label>
+                   <input type="file" class="form-control" id="imagemEdicaoBibliotecario" name="imagemPerfilEdicaoBibliotecario"> 
+                </div>
+                <div class="col-8">
                   <label for="senhaEdicaoBibliotecario" class="form-label">Senha:</label>
                   <input type="password" class="form-control" id="senhaEdicaoBibliotecario" name="senha" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-8">
                    <label for="confirmarSenhaEdicaoBibliotecario" class="form-label">Confirmar Senha:</label>
                    <input type="password" class="form-control" id="confirmarSenhaEdicaoBibliotecario" name="confirmarSenha" required>
                 </div>
-                <div class="col-6 d-flex flex-column">
+                <div class="col-12 d-flex flex-column">
                   <p>Nível do cargo:</p>
                   <div class="input-group d-flex flex-row gap-2">
                     <input type="radio" id="cargoComumEdicao" name="cargo" value="comum">
@@ -177,7 +181,7 @@ function gerenciarBibliotecarios(){ // Pronta e transformado
                   </div>
                   <div class="input-group d-flex flex-row gap-2">
                     <input type="radio" id="cargoAdminEdicao" name="cargo" value="comum">
-                    <label for="cargoAdminEdicao" id="labelCargoAdminEdicao">Admin</label>
+                    <label for="cargoAdminEdicao" id="labelCargoAdminEdicao">Administrador</label>
                   </div>
                 </div>
               </div>
@@ -236,15 +240,19 @@ function gerenciarBibliotecarios(){ // Pronta e transformado
                      maxlength="14"
                      required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-10">
+                   <label for="imagemCadastroBibliotecario" class="form-label">Imagem de Perfil:</label>
+                   <input type="file" class="form-control" id="imagemCadastroBibliotecario" name="imagemPerfilCadastroBibliotecario"> 
+                </div>
+                <div class="col-8">
                   <label for="senhaCadastroBibliotecario" class="form-label">Senha:</label>
                   <input type="password" class="form-control" id="senhaCadastroBibliotecario" name="senha" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-8">
                    <label for="confirmarSenhaCadastroBibliotecario" class="form-label">Confirmar Senha:</label>
                    <input type="password" class="form-control" id="confirmarSenhaCadastroBibliotecario" name="confirmarSenha" required>
                 </div>
-                <div class="col-6 d-flex flex-column">
+                <div class="col-12 d-flex flex-column">
                   <p>Nível do cargo:</p>
                   <div class="input-group d-flex flex-row gap-2">
                     <input type="radio" id="cargoComumEdicaoCadastro" name="cargo" value="comum">
@@ -252,7 +260,7 @@ function gerenciarBibliotecarios(){ // Pronta e transformado
                   </div>
                   <div class="input-group d-flex flex-row gap-2">
                     <input type="radio" id="cargoAdminEdicaoCadastro" name="cargo" value="comum">
-                    <label for="cargoAdminEdicao" id="labelCargoAdminCadastro">Admin</label>
+                    <label for="cargoAdminEdicao" id="labelCargoAdminCadastro">Administrador</label>
                   </div>
                 </div>
               </div>
@@ -896,12 +904,8 @@ function gerenciarExemplares(){ // Pronta e transformado
                 <strong>Autor: </strong> Lewis Carroll
               </p>
               <p class="mb-0 text-muted">
-                <strong>Número de Páginas: </strong>
-                374
-              </p>
-              <p class="mb-0 text-muted">
-                <strong>Idioma: </strong> 
-                Português(Brasil)
+                <strong>Número de Patrimônio: </strong>
+                XXXXXXXXXX
               </p>
               <p class="mb-0 text-muted"><strong>Edição: </strong>4</p>
               <p class="mb-0 text-muted"><strong>Ano de Publicação: </strong>2010</p>
@@ -955,17 +959,13 @@ function gerenciarExemplares(){ // Pronta e transformado
                 <strong>Autor: </strong> Lewis Carroll
               </p>
               <p class="mb-0 text-muted">
-                <strong>Número de Páginas: </strong>
-                374
-              </p>
-              <p class="mb-0 text-muted">
-                <strong>Idioma: </strong> 
-                Português(Brasil)
+                <strong>Número de Patrimônio:</strong>
+                XXXXXXXXXXXXXXX
               </p>
               <p class="mb-0 text-muted"><strong>Edição: </strong>4</p>
               <p class="mb-0 text-muted"><strong>Ano de Publicação: </strong>2010</p>
               <p class="mb-0 text-muted">
-                <strong>ISBN: </strong> XXXXXXXXX
+                <strong>Número de Patrimônio: </strong> XXXXXXXXX
               </p>
               <p></p>
               <p class="mb-0 text-muted"><strong>Classificação: </strong> XXXXXXX</p>
@@ -1047,15 +1047,15 @@ function gerenciarExemplares(){ // Pronta e transformado
                         required
                       />
                     </div>
-                  <div class="col-10">
-                    <label for="isbnEdicaoExemplar" class="form-label"
-                      >ISBN:</label
+                 <div class="col-10">
+                    <label for="numeroPatrimonioEdicaoExemplar" class="form-label"
+                      >Número de Patrimônio:</label
                     >
                     <input
                       type="text"
                       class="form-control"
-                      id="isbnEdicaoExemplar"
-                      name="isbnEdicaoExemplar"
+                      id="numeroPatrimonioEdicaoExemplar"
+                      name="numeroPatrimonioEdicaoExemplar"
                       required
                     />
                   </div>
@@ -1153,26 +1153,16 @@ function gerenciarExemplares(){ // Pronta e transformado
                       />
                     </div>
                   <div class="col-10">
-                    <label for="isbnCadastroExemplar" class="form-label"
-                      >ISBN:</label
+                    <label for="numeroPatrimonioCadastroExemplar" class="form-label"
+                      >Número de Patrimônio:</label
                     >
                     <input
                       type="text"
                       class="form-control"
-                      id="isbnCadastroExemplar"
-                      name="isbnCadastroExemplar"
+                      id="numeroPatrimonioCadastroExemplar"
+                      name="numeroPatrimonioCadastroExemplar"
                       required
                     />
-                  </div>
-                  <div class="col-8">
-                      <label for="statusCadastroExemplar" class="form-label"
-                        >Status:</label>
-                      <select id="statusCadastroExemplar" name="statusCadastroExemplar">
-                       <option value="disponivel">Disponível</option>
-                       <option value="emprestado">Em Empréstimo</option>
-                       <option value="reservado">Em Reserva</option>
-                       <option value="descartado">Descartado</option>
-                      </select>
                   </div>
                   <div class="col-12">
                     <label for="observacoesCadastroExemplar" class="form-label"
@@ -1235,7 +1225,7 @@ function gerenciarExemplares(){ // Pronta e transformado
                     </p>
                     <p class="mb-0 text-muted">Autor: Lewis Carroll</p>
                     <p class="mb-0 text-muted">Edição: 4</p>
-                    <p class="mb-0 text-muted">ISBN: XXXXXXXXX</p>
+                    <p class="mb-0 text-muted">Número de Patrimônio: XXXXXXXXX</p>
                   </div>
 
                   <!-- Botões -->
@@ -2467,7 +2457,7 @@ function gerenciarSecoes(){ // Pronta e transformado
   menu.innerHTML = "";
   menu.innerHTML = `
      
-<main class="container-fluid px-4 mt-5">
+  <main class="container-fluid px-4 mt-5">
     <div class="container py-5">
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
@@ -2998,11 +2988,11 @@ function gerenciarLeitores(){ // Pronta e transformado
                     <label for="emailCadastroLeitor" class="form-label">E-mail:</label>
                     <input type="email" class="form-control" id="emailCadastroLeitor" name="emailCadastroLeitor" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-7">
                    <label for="dataNascimentoCadastroLeitor" class="form-label">Data de Nascimento:</label>
                    <input type="date" class="form-control" id="dataNascimentoCadastroLeitor" name="dataNascimentoCadastroLeitor" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-8">
                   <label for="cpfCadastroLeitor" class="form-label">CPF:</label>
                   <input type="text"
                      class="form-control"
@@ -3012,11 +3002,15 @@ function gerenciarLeitores(){ // Pronta e transformado
                      maxlength="14"
                      required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-10">
+                   <label for="imagemCadastroLeitor" class="form-label">Imagem de Perfil:</label>
+                   <input type="file" class="form-control" id="imagemCadastroLeitor" name="imagemPerfilLeitorCadastro"> 
+                </div>
+                <div class="col-8">
                   <label for="senhaCadastroLeitor" class="form-label">Senha:</label>
                   <input type="password" class="form-control" id="senhaCadastroLeitor" name="senha" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-8">
                    <label for="confirmarSenhaCadastroLeitor" class="form-label">Confirmar Senha:</label>
                    <input type="password" class="form-control" id="confirmarSenhaCadastroLeitor" name="confirmarSenha" required>
                 </div>
@@ -3066,11 +3060,11 @@ function gerenciarLeitores(){ // Pronta e transformado
                     <label for="emailEdicaoLeitor" class="form-label">E-mail:</label>
                     <input type="email" class="form-control" id="emailEdicaoLeitor" name="emailEdicaoLeitor" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-7">
                    <label for="dataNascimentoEdicaoLeitor" class="form-label">Data de Nascimento:</label>
                    <input type="date" class="form-control" id="dataNascimentoEdicaoLeitor" name="dataNascimentoEdicaoLeitor" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-8">
                   <label for="cpfEdicaoLeitor" class="form-label">CPF:</label>
                   <input type="text"
                      class="form-control"
@@ -3080,11 +3074,15 @@ function gerenciarLeitores(){ // Pronta e transformado
                      maxlength="14"
                      required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-10">
+                   <label for="imagemEdicaoLeitor" class="form-label">Imagem de Perfil:</label>
+                   <input type="file" class="form-control" id="imagemEdicaoLeitor" name="imagemPerfilLeitorEdicao"> 
+                </div>
+                <div class="col-8">
                   <label for="senhaEdicaoLeitor" class="form-label">Senha:</label>
                   <input type="password" class="form-control" id="senhaEdicaoLeitor" name="senhaEdicaoLeitor" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-8">
                    <label for="confirmarSenhaEdicaoLeitor" class="form-label">Confirmar Senha:</label>
                    <input type="password" class="form-control" id="confirmarSenhaEdicaoLeitor" name="confirmarSenhaEdicaoLeitor" required>
                 </div>
@@ -3839,6 +3837,16 @@ function gerenciarEditoras(){ // Pronta e transformado
                       required
                     />
                   </div>
+                  <div class="col-8">
+                   <label for="enderecoCadastroEditora" class="form-label">Endereço:</label>
+                   <input
+                     type="text"
+                     class="form-control"
+                     id="enderecoCadastroEditora"
+                     name="enderecoCadastroEditora"
+                     required
+                   >
+                  </div>
                 </div>
               </form>
             </div>
@@ -3926,6 +3934,16 @@ function gerenciarEditoras(){ // Pronta e transformado
                       name="emailEdicaoEditora"
                       required
                     />
+                  </div>
+                  <div class="col-8">
+                   <label for="enderecoEdicaoEditora" class="form-label">Endereço:</label>
+                   <input
+                     type="text"
+                     class="form-control"
+                     id="enderecoEdicaoEditora"
+                     name="enderecoEdicaoEditora"
+                     required
+                   >
                   </div>
 
                 </div>
