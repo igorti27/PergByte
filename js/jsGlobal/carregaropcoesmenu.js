@@ -4075,15 +4075,15 @@ function gerenciarAutores(){ // Pronta e transformado
       <!--Barra de Pesquisa-->
       <div class="row justify-content-center mb-4 mt-5">
         <div class="col-md-8">
-          <form action="#" method="GET" class="input-group mb-3 d-flex gap-2">
+          <div class="input-group mb-3 d-flex gap-2">
             <button type="submit" class="input-group-text lupa" id="gerenciamentoAutoresLupa">
               <i class="fas fa-search"></i>
             </button>
             <input
               type="text"
               class="form-control barraPesquisaGerenciamento"
-              id="pesquisarAutores"
-              name="pesquisadeAutores"
+              id="pesquisaAutores"
+              name="pesquisaAutores"
               placeholder="Autor..."
             />
 
@@ -4110,7 +4110,7 @@ function gerenciarAutores(){ // Pronta e transformado
                   /></svg
               ></i>
             </button>
-          </form>
+          </div>
         </div>
       </div>
 
