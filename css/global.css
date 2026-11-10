@@ -73,7 +73,7 @@
    --navbarSupPerfilBorder: #2f2f2f;
    --navbarSupPerfilText: #ffffff;
    --navbarSupPerfilItem: #ffffff;
-   --navbarSupPerfilHover: #0964ed;
+   --navbarSupPerfilHover: #45689c;
 
    --navbarLat: #000000;
    --navbarLatText: #ffffff;
@@ -167,9 +167,7 @@ body{
   }
 
   .dropdown-item { /* Cor do texto das opções */
-
-    color: var(--navbarSupPerfilText);
-
+    color: var(--navbarSupPerfilText) !important;
   }
 
   .dropdown-item i{
@@ -427,5 +425,5 @@ select{
 }
 
 .sb-topnav i {
-   color: var(--navbarSupPerfilItem);
+  color: var(--navbarSupPerfilItem);
 }

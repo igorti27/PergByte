@@ -29,15 +29,13 @@
      <link href="../css/edicoes.css" rel="stylesheet"/>
      <link href="../css/editoras.css" rel="stylesheet"/>
      <link href="../css/livros.css" rel="stylesheet"/>
-     <link href="../css/menubibliotecarioadmin.css" rel="stylesheet" />
-     <link href="../css/global.css" rel="stylesheet"/>
-     <!--O body e outros-->
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/menubibliotecarioadmin.css" />
+    <link href="../css/global.css" rel="stylesheet"/>
   </head>
   <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">

@@ -14,7 +14,7 @@
       href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
      <link href="../css/styles.css" rel="stylesheet" />
      <link href="../css/leitores.css" rel="stylesheet" />
      <link href="../css/emprestimos.css" rel="stylesheet" />
@@ -158,8 +158,7 @@
                 id="botaoTemaClaro"
                 data-theme-value="light"
               >
-                <i class="bi bi-sun-fill me-2"></i>
-                Tema Claro
+                <i class="bi bi-sun-fill me-2"></i> Tema Claro
               </button>
             </li>
             <li>

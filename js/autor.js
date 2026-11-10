@@ -1,17 +1,12 @@
 
-/*
+
 $(document).ready(function() {
-
-
-            $('#loginBtn').click(function(evento) {
-                //console.log(evento);
-
+            $('#lupaAutor').click(function(evento) {
                 $.ajax({
-                    url: 'campobuscaautor.php', // qual script no servidor irá processar a requisição
-                    type: 'POST',
+                    url: '../php/forms/busca/campobuscaautor.php', // qual script no servidor irá processar a requisição
+                    type: 'GET',
                     data: {
-                        email: $('#email').val(),
-                        password: $('#password').val()
+                        pesquisaAutores: $('#pesquisaAutores').val()
                     },
                     beforeSend: function() {
                         $('#spinner').toggleClass('d-none'); // mostra o spinner
@@ -37,4 +32,3 @@ $(document).ready(function() {
                 });
             }); 
 });
-*/

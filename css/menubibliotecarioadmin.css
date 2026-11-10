@@ -30,7 +30,7 @@
   --bs-primary-rgb: 77, 163, 255;
 
   --menu-bg: #121212;
-  --menu-text: black;
+  --menu-text: white;
   --menu-hover: #1e293b;
 
   --sidebar-bg: #000000;
@@ -117,11 +117,11 @@ body {
   }
 
   .dropdown-item {
-    color: var(--menu-text);
+    color: var(--menu-text) !important;
   }
 
   .dropdown-item:hover {
-    background-color: var(--menu-hover);
+    background-color: var(--menu-hover) !important;
   }
 
   /* Rodapé menu lateral */

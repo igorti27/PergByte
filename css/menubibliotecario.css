@@ -30,8 +30,8 @@
   --bs-primary-rgb: 77, 163, 255;
 
   --menu-bg: #121212;
-  --menu-text: black;
-  --menu-hover: #1e293b;
+  --menu-text: white;
+  --menu-hover: #39537c;
 
   --sidebar-bg: #000000;
   --sidebar-text: #ffffff;
@@ -117,7 +117,8 @@ body {
   }
 
   .dropdown-item {
-    color: var(--menu-text);
+    color: var(--menu-text) !important;
+    
   }
 
   .dropdown-item:hover {

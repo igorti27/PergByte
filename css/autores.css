@@ -43,7 +43,7 @@ textarea {
   --menu-shadow: rgba(0, 0, 0, 0.45);
 }
 /*lupa*/
-#gerenciamentoAutoresLupa {
+#lupaAutor {
   background: var(--menu-primary);
 
   color: white;
@@ -53,7 +53,7 @@ textarea {
   border-radius: 12px;
 }
 /*barra de pesquisa*/
-#pesquisarAutores{
+#pesquisaAutores{
   background: var(--menu-surface);
 
   color: var(--menu-text);
@@ -65,11 +65,11 @@ textarea {
   min-height: 54px;
 }
 
-#pesquisarAutores::placeholder {
+#pesquisaAutores::placeholder {
   color: var(--menu-text-secondary);
 }
 
-#pesquisarAutores:focus {
+#pesquisaAutores:focus {
   background: var(--menu-surface);
 
   color: var(--menu-text);
@@ -92,7 +92,7 @@ textarea {
   transition: 0.25s;
 }
 
-#adicionarEstante:hover {
+#adicionarAutor:hover {
   background: var(--menu-primary-hover);
 
   transform: translateY(-2px);

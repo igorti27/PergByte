@@ -12,8 +12,9 @@
   <h1>500</h1>
   <h3>Internal Server Error</h3>
   <h2>Ops! Aconteceu um eror, estamos trabalhando nisso.</h2>
-  <!-- use window.history.back(); to go back -->
-  <button>Voltar para a página anterior.</button>
+  <button id="btnRetorno">Voltar para a página anterior.</button>
 </div>
 </body>
+<script src="../js/jsGlobal/jquery-4.0.0.js"></script>
+<script src="../js/retornoumapagina.js"></script>
 </html>
