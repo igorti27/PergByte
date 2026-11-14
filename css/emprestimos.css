@@ -39,7 +39,7 @@
 }
 
 /*lupa*/
-#gerenciamentoEmprestimosLupa {
+#lupaEmprestimo {
   background: var(--menu-primary);
 
   color: white;
@@ -49,7 +49,7 @@
   border-radius: 12px;
 }
 /*barra de pesquisa*/
-#pesquisarEmprestimo {
+#pesquisaEmprestimos {
   background: var(--menu-surface);
 
   color: var(--menu-text);
@@ -61,11 +61,11 @@
   min-height: 54px;
 }
 
-#pesquisarEmprestimo::placeholder {
+#pesquisaEmprestimos::placeholder {
   color: var(--menu-text-secondary);
 }
 
-#pesquisarEmprestimo:focus {
+#pesquisaEmprestimos:focus {
   background: var(--menu-surface);
 
   color: var(--menu-text);

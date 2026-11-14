@@ -29,14 +29,14 @@ textarea {
 }
 
 /*lupa*/
-#gerenciamentoClassificacaoLupa {
+#lupaClassificao {
   background: var(--menu-primary);
   color: white;
   border: none;
   border-radius: 12px;
 }
 /*barra de pesquisa*/
-#pesquisarClassificacao {
+#pesquisaClassificacoes {
   background: var(--menu-surface);
   color: var(--menu-text);
   border: 1px solid var(--menu-border);
@@ -44,7 +44,7 @@ textarea {
   min-height: 54px;
 }
 /*icone + */
-#adicionarClassificacao {
+#pesquisaClassificacoes {
   background: var(--menu-primary);
   color: white;
   border: none;

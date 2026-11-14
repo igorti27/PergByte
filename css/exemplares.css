@@ -51,7 +51,7 @@ textarea {
 }
 
 /*Lupa*/
-#gerenciamentoExemplarLupa {
+#lupaExemplar {
   background-color: var(--menu-primary);
 
   border: none;
@@ -62,7 +62,7 @@ textarea {
 }
 
 /* barra de pesquisa*/
-#pesquisarExemplares {
+#pesquisaExemplares {
   background: var(--menu-surface);
 
   color: var(--menu-text);
@@ -74,11 +74,11 @@ textarea {
   min-height: 52px;
 }
 
-#pesquisarExemplares::placeholder {
+#pesquisaExemplares::placeholder {
   color: var(--menu-text-secondary);
 }
 
-#pesquisarExemplares:focus {
+#pesquisaExemplares:focus {
   border-color: var(--menu-primary);
 
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.2);

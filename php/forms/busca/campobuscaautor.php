@@ -30,7 +30,7 @@ if (empty($nomeAutor)) {
 
     $resp = "";
 
-    while ($tupla = mysqli_fetch_assoc($alunos)) {
+    while ($tupla = mysqli_fetch_assoc($autores)) {
 
       $id = validarDadosGeral($tupla["id"]);
       $nome = validarDadosGeral($tupla["nome"]);
@@ -51,12 +51,16 @@ if (empty($nomeAutor)) {
       $cadastro = "cadastro" . (string)$id;
       $edicao = "edicao" . (string)$id;
 
-      $formularioEdicao = "formularioEdicao" . $id;
-      $nomeformedicao = "nomeEdicaoAutor" . $id;
-      $nacionalidadeformedicao = "nacionalidadeEdicaoAutor" . $id;
-      $descricaoformedicao = "descricaoEdicaoAutor" . $id;
+      $btnFecharInformacao = "btnFecharInformacaoLeitor".(string)$id;
+      $btnSalvarAlteracoes = "btnSalvarAlteracoesLeitor".(string)$id;
+      $btnExluirAutor = "btnExcluirAutor". (string)$id;
 
-      $resultadoPesquisa = "resultadoPesquisa" . $id;
+      $formularioEdicao = "formularioEdicao" . (string)$id;
+      $nomeformedicao = "nomeEdicaoAutor" . (string)$id;
+      $nacionalidadeformedicao = "nacionalidadeEdicaoAutor" . (string)$id;
+      $descricaoformedicao = "descricaoEdicaoAutor" . (string)$id;
+
+      $resultadoPesquisa = "resultadoPesquisa" . (string)$id;
 
       $resp .= "
              <!--Janelas-->
@@ -91,7 +95,6 @@ if (empty($nomeAutor)) {
                 type='button'
                 class='btn btn-secondary'
                 data-bs-dismiss='modal'
-                id='modalFechar'
               >
                 Fechar
               </button>
@@ -114,6 +117,9 @@ if (empty($nomeAutor)) {
               ></button>
             </div>
             <div class='modal-body d-flex flex-column gap-2'>
+            
+              <input type='hidden' name='idExclusao' value= '$id'>
+
               <p class='mb-0 text-muted'><strong>Nome:</strong>'$nome'</p>
 
               <p class='mb-0 text-muted'>
@@ -135,81 +141,7 @@ if (empty($nomeAutor)) {
               >
                 Cancelar
               </button>
-              <button type='button' class='btn btn-primary'>Excluir</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--Janela de cadastro-->
-      <div class='modal' tabindex='-1' id=$cadastro class='cadastros'>
-        <div class='modal-dialog'>
-          <div class='modal-content'>
-            <div class='modal-header'>
-              <h5 class='modal-title'>Cadastrando..</h5>
-              <button
-                type='button'
-                class='btn-close'
-                data-bs-dismiss='modal'
-                aria-label='Close'
-              ></button>
-            </div>
-            <div class='modal-body'>
-              <form
-                action='#'
-                target='_self'
-                method='post'
-                id='formularioCadastroAutor'
-              >
-               < class='row g-3'>
-                  <div class='col-10'>
-                    <label for='nomeCadastroAutor' class='form-label'
-                      >Nome:</label
-                    >
-                    <input
-                      type='text'
-                      class='form-control'
-                      id='nomeCadastroAutor'
-                      name='nomeCadastroAutor'
-                      required
-                    />
-                  </div>
-                  <div class='col-8'>
-                    <label for='nacionalidadeCadastroAutor' class='form-label'
-                      >Nacionalidade:</label
-                    >
-                    <input
-                      type='text'
-                      class='form-control'
-                      id='nacionalidadeCadastroAutor'
-                      name='nacionalidadeCadastroAutor'
-                    />
-                  </div>
-                  <div class='col-12 d-flex flex-column'>
-                    <label for='descricaoCadastroAutor' class='form-label'
-                      >Descrição:</label
-                  >
-                    <textarea
-                      id='descricaoCadastroAutor'
-                      name='descricaoCadastroAutor'
-                      rows='6'
-                      cols='6'
-                    ></textarea>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class='modal-footer'>
-              <button
-                type='button'
-                class='btn btn-danger'
-                data-bs-dismiss='modal'
-              >
-                Cancelar
-              </button>
-              <button type='button' class='btn btn-primary'>
-                Cadastrar Autor
-              </button>
+              <button type='button' class='btn btn-primary btnExcluirAutor' id='$btnExluirAutor'>Excluir</button>
             </div>
           </div>
         </div>
@@ -271,6 +203,7 @@ if (empty($nomeAutor)) {
                       cols='6'
                     ></textarea>
                   </div>
+                  <input type='hidden' value='$id' name='idEdicaoAutor'>
                 </div>
               </form>
             </div>
@@ -282,7 +215,7 @@ if (empty($nomeAutor)) {
               >
                 Cancelar
               </button>
-              <button type='button' class='btn btn-primary'>
+              <button type='button' class='btn btn-primary btnSalvarAlteracoes' id='$btnSalvarAlteracoes'>
                 Salvar Alterações
               </button>
             </div>
@@ -291,6 +224,8 @@ if (empty($nomeAutor)) {
       </div>
 
       <!--Resultados da Pesquisa-->
+      <div class='row justify-content-center'>
+        <div class='col-md-8 mt-3'>
           <div class='card shadow-sm'>
             <div
               class='card-body'
@@ -308,7 +243,7 @@ if (empty($nomeAutor)) {
 
                      <p class='mb-0 text-muted'>
                       <strong>Nacionalidade: </strong>
-                      Brasileira
+                       $nacionalidade
                     </p>
 
                 </div>
@@ -366,7 +301,9 @@ if (empty($nomeAutor)) {
                 </div>
               </div>
             </div>
-          </div> ";
+          </div> 
+        </div>
+      </div>";
     }
 
     mysqli_close($conexao);

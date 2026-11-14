@@ -240,14 +240,25 @@
 
       <div id="layoutSidenav_content"> <!--Conteúdo principal-->
         <main class="container-fluid px-4 mt-5">
-           <div class="mb-4 w-100">
-             <input type="text" placeholder="Pesquisar livro..." class="form-control  m-auto" id="pesquisarLivrosLeitor" name="barraPesquisaLivrosLeitor">
+
+           <div class="mb-4 col-10 d-flex flex-row gap-3 justify-content-start" style="positon: fixed">
+             <button type="button" id="lupaPesquisaLivros" class="lupa p-2 ms-2">
+             <svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+             </svg>
+             </button>
+             <input type="text" placeholder="Pesquisar livro..." class="form-control m-auto col-7" name="barraPesquisaLivros" id="barraPesquisaLivros">
            </div>
-           <div class="card" id="resultadosLivrosLeitor">
-              <div class="card-body">
-                <p>Nenhum Resultado</p>
-              </div>
-           </div>
+
+        <div id="resposta" class="d-flex flex-column gap-3 align-items-center">
+            <div class="spinner-border text-secondary mt-5 d-none" role="status" id="spinner">
+              <span class="sr-only">Loading...</span>
+            </div>
+
+            
+
+        </div>
+        
         </main>
       </div>
     </div>

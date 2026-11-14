@@ -15,19 +15,19 @@
       rel="stylesheet"
     />
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-     <link href="../css/styles.css" rel="stylesheet" />
-     <link href="../css/leitores.css" rel="stylesheet" />
-     <link href="../css/emprestimos.css" rel="stylesheet" />
-     <link href="../css/estantes.css" rel="stylesheet" />
-     <link href="../css/exemplares.css" rel="stylesheet" />
-     <link href="../css/classificacao.css" rel="stylesheet" />
-     <link href="../css/autores.css" rel="stylesheet" />
-     <link href="../css/edicoes.css" rel="stylesheet" />
-     <link href="../css/editoras.css" rel="stylesheet" />
-     <link href="../css/livros.css" rel="stylesheet" />
-     <link href="../css/secoes.css" rel="stylesheet" />
-     <link href="../css/menubibliotecario.css" rel="stylesheet" />
-     <link href="../css/global.css" rel="stylesheet"/>
+     <link rel="stylesheet" href="../css/styles.css"  />
+     <link rel="stylesheet" href="../css/emprestimos.css" />
+     <link rel="stylesheet" href="../css/estantes.css"/>
+     <link rel="stylesheet" href="../css/exemplares.css"  />
+     <link rel="stylesheet" href="../css/classificacao.css" " />
+     <link rel="stylesheet" href="../css/autores.css" />
+     <link rel="stylesheet" href="../css/edicoes.css"  />
+     <link rel="stylesheet" href="../css/editoras.css"  />
+     <link rel="stylesheet" href="../css/livros.css"  />
+     <link rel="stylesheet" href="../css/secoes.css"  />
+     <link rel="stylesheet" href="../css/leitores.css"  />
+     <link rel="stylesheet" href="../css/global.css" />
+     <link rel="stylesheet" href="../css/menubibliotecario.css"/>
   </head>
   <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -273,14 +273,25 @@
 
       <div id="layoutSidenav_content"> <!--Conteúdo principal-->
         <main class="container-fluid px-4 mt-5">
-           <div class="mb-4 w-100">
-             <input type="text" placeholder="Pesquisar livro..." class="form-control m-auto" name="pesquisadeLivros" id="barraPesquisaLivrosBibliotecario">
+
+           <div class="mb-4 col-10 d-flex flex-row gap-3 justify-content-start" style="positon: fixed">
+             <button type="button" id="lupaPesquisaLivros" class="lupa p-2 ms-2">
+             <svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+             </svg>
+             </button>
+             <input type="text" placeholder="Pesquisar livro..." class="form-control m-auto col-7" name="barraPesquisaLivros" id="barraPesquisaLivros">
            </div>
-           <div class="card" id="resultadosLivrosBibliotecario">
-              <div class="card-body">
-                <p>Nenhum Resultado</p>
-              </div>
+
+        <div id="resposta" class="d-flex flex-column gap-3 align-items-center">
+           <div class="spinner-border text-secondary mt-5 d-none" role="status" id="spinner">
+              <span class="sr-only">Loading...</span>
            </div>
+
+           
+
+        </div>
+
         </main>
       </div>
     </div>

@@ -18,7 +18,7 @@
 
          mysqli_close($conexao);
   
-        return json_encode(array('error' => true, 'reposta' => 'nomeinvalido'));
+         return json_encode(array('error' => true, 'reposta' => 'nomeinvalido'));
 
     }else{
         
