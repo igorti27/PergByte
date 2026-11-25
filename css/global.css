@@ -427,3 +427,7 @@ select{
 .sb-topnav i {
   color: var(--navbarSupPerfilItem);
 }
+
+#spinner{
+  margin-left: 50%
+}

@@ -105,4 +105,39 @@ function validarCPF($cpf){
         }
 }
 
+function validarSenha($senha){
+   
+   $tamanho = (strlen($senha) >= 6 && strlen($senha) <= 10 ) ? true : false;
+   $numero = preg_match('/[0-9]/',$senha);
+   $letraMai = preg_match('/[A-Z]/',$senha);
+   $letraMin = preg_match('/[a-z]/', $senha);
+   $caracterEsp = preg_match('/[W_]/',$senha);
+
+   if($tamanho == true && $numero == true && $letraMai == true && $letraMin == true && $caracterEsp == true){
+       return $senha; 
+   }else{
+      return false;
+   }
+
+}
+
+function validarEmail($email){
+
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){ // Função válida a formatação do email
+         return false;
+    }
+
+    $extensaoEmail = strstr($email,'@'); //strstr(), pega tudo o que está de @ em diante
+    $dominio = substr($extensaoEmail,1);  //substr(), pega o que está sendo retornado de strstr e remove o @
+    
+   // Exemplo: nome@gmail.com(email) -> @gmail.com(extensão de email) -> gmail.com(domínio)
+
+   if(!checkdnsrr($dominio,"MX")){ // Checa se o domínio é válido, MX(Mail Exchange) indica que são emails para validar
+         return false;
+   }
+
+   return $email;
+
+}
+
 ?>

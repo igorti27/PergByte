@@ -37,30 +37,29 @@ if (empty($nomeAutor)) {
       $nacionalidade = validarDadosGeral($tupla["nacionalidade"]);
       $descricao = validarDadosGeral($tupla["descricao"]);
 
-      if (empty($nacionalidade)) {
+      if (empty($nacionalidade) || $nacionalidade == null) {
         $nacionalidade = "-";
       }
-      if (empty($descricao)) {
+      if (empty($descricao) || $descricao == null) {
         $descricao = "-";
       }
 
       $id = encrypt($id);
 
-      $informacao = "informacao" . (string)$id;
-      $exclusao = "exclusao" . (string)$id;
-      $cadastro = "cadastro" . (string)$id;
-      $edicao = "edicao" . (string)$id;
+      $informacao = "informacaoAutor" . (string)$id;
+      $exclusao = "exclusaoAutor" . (string)$id;
+      $edicao = "edicaoAutor" . (string)$id;
 
-      $btnFecharInformacao = "btnFecharInformacaoLeitor".(string)$id;
-      $btnSalvarAlteracoes = "btnSalvarAlteracoesLeitor".(string)$id;
+      $btnFecharInformacao = "btnFecharInformacaoAutor".(string)$id;
+      $btnSalvarAlteracoes = "btnSalvarAlteracoesAutor".(string)$id;
       $btnExluirAutor = "btnExcluirAutor". (string)$id;
 
-      $formularioEdicao = "formularioEdicao" . (string)$id;
+      $formularioEdicao = "formularioEdicaoAutor" . (string)$id;
       $nomeformedicao = "nomeEdicaoAutor" . (string)$id;
       $nacionalidadeformedicao = "nacionalidadeEdicaoAutor" . (string)$id;
       $descricaoformedicao = "descricaoEdicaoAutor" . (string)$id;
 
-      $resultadoPesquisa = "resultadoPesquisa" . (string)$id;
+      $resultadoPesquisa = "resultadoPesquisaAutor" . (string)$id;
 
       $resp .= "
              <!--Janelas-->
@@ -224,7 +223,7 @@ if (empty($nomeAutor)) {
       </div>
 
       <!--Resultados da Pesquisa-->
-      <div class='row justify-content-center'>
+      <div class='row justify-content-center ms-5'>
         <div class='col-md-8 mt-3'>
           <div class='card shadow-sm'>
             <div

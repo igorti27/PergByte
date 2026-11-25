@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PergByte</title>
   </head>
-  <link rel="stylesheet" href="css/index.css" />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/index.css" />
   <body>
     <main class="pagina">
       <section class="lateral">
@@ -154,7 +155,7 @@
               <p>Use uma conta cadastrada para entrar.</p>
             </div>
 
-            <form onsubmit="entrar(event)">
+            <form action="php/login.php" method="POST" onsubmit="entrar(event)">
               <label>
                 E-mail
 
@@ -191,7 +192,7 @@
               <p>Informe seu e-mail e escolha uma nova senha.</p>
             </div>
 
-            <form onsubmit="alterarSenha(event)">
+            <form action="#" method="post" onsubmit="alterarSenha(event)">
               <label>
                 E-mail cadastrado
 
@@ -241,5 +242,6 @@
       </section>
     </main>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <script src="js/login.js"></script>
 </html>
