@@ -18,9 +18,7 @@
 
         <div id="resposta" class="d-flex flex-column gap-3 w-100 h-100">
            <div class="spinner-border text-secondary mt-5" role="status" id="spinner" style="margin-left:50%"></div>
-
            
-
         </div>
 
         </main>

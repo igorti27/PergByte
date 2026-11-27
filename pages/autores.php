@@ -60,7 +60,104 @@
           <div class="spinner-border text-secondary mt-5 d-none" role="status" id="spinner" style="margin-left:50%"></div>
             
            
-            
+              <div class="row justify-content-center ms-2">
+        <div class="col-md-8 mt-3">
+          <div class="card shadow-sm">
+            <div
+              class="card-body"
+              id="resultadoPesquisa"
+              data-bs-toggle="modal"
+              data-bs-target="#informacoesEmprestimo"
+            >
+              <div class="border rounded p-3 mb-3">
+                <div
+                  class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3"
+                >
+                  <!-- Informações -->
+                  <div class="flex-grow-1 d">
+                    <h5 class="mb-1">Empréstimo 001</h5>
+                    <p class="mb-0 text-muted">
+                      Data de realização: 00/00/0000
+                    </p>
+                    <p class="mb-0 text-muted">
+                      Previsão de retorno: 00/00/0000
+                    </p>
+                    <p class="mb-0 text-muted">Data de entrega: 00/00/0000</p>
+                    <p class="mb-0 text-muted">
+                      Status: Atrasado/Entregue/Entregue com atraso
+                    </p>
+                    <p class="mb-0 text-muted">Leitor: XXXXXXXXX</p>
+                    <p class="mb-0 text-muted">CPF do Leitor: XXXXXXXXX</p>
+                  </div>
+
+                  <!-- Botões -->
+                  <div class="d-flex flex-nowrap gap-2">
+                    <div
+                      class="btn btn-success"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modificarInformacoesEmprestimo"
+                      data-stop-propagation
+                    >
+                      <i>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="2em"
+                          height="2em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="currentColor"
+                            d="m19.71 8.04l-2.34 2.33l-3.75-3.75l2.34-2.33c.39-.39 1.04-.39 1.41 0l2.34 2.34c.39.37.39 1.02 0 1.41M3 17.25L13.06 7.18l3.75 3.75L6.75 21H3zM16.62 5.04l-1.54 1.54l2.34 2.34l1.54-1.54zM15.36 11L13 8.64l-9 9.02V20h2.34z"
+                          />
+                        </svg>
+                      </i>
+                    </div>
+
+                    <div
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#avisoexclusao"
+                      data-stop-propagation
+                    >
+                      <i>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="2em"
+                          height="2em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M0 0h24v24H0z" fill="none" />
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 7h16m-10 4v6m4-6v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"
+                          />
+                        </svg>
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-circle-fill"
+                  viewBox="0 0 16 16"
+                  id="circuloStatus"
+                  style = "color: yellow;"
+                >
+                  <circle cx="8" cy="8" r="8" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
 
       <!--Janela de Cadastro-->
@@ -68,13 +165,7 @@
         <div class='modal-dialog'>
           <div class='modal-content'>
             <div class='modal-header'>
-              <h5 class='modal-title'>Cadastrando..</h5>
-              <button
-                type='button'
-                class='btn-close'
-                data-bs-dismiss='modal'
-                aria-label='Close'
-              ></button>
+              <h5 class='modal-title'>Cadastrando...</h5>
             </div>
             <div class='modal-body'>
               <form
@@ -83,7 +174,7 @@
                 method='post'
                 id='formularioCadastroAutor'
               >
-               <div class='row g-3'>
+               <div class='row g-3 d-flex gap-2'>
                   <div class='col-10'>
                     <label for='nomeCadastroAutor' class='form-label'
                       >Nome:</label
@@ -95,8 +186,13 @@
                       name='nomeCadastroAutor'
                       required
                     />
+
+                    <span id="notificacaoAutornome" class="text-danger notificacoesAutor"></span>
+
                   </div>
-                  <div class='col-8'>
+
+
+                  <div class='col-8 gap-2'>
                     <label for='nacionalidadeCadastroAutor' class='form-label'
                       >Nacionalidade:</label
                     >
@@ -106,8 +202,11 @@
                       id='nacionalidadeCadastroAutor'
                       name='nacionalidadeCadastroAutor'
                     />
+
+                    <span id="notificacaoAutornacionalidade" class="text-danger notificacoesAutor"></span>
+
                   </div>
-                  <div class='col-12 d-flex flex-column'>
+                  <div class='col-12 gap-2 d-flex flex-column'>
                     <label for='descricaoCadastroAutor' class='form-label'
                       >Descrição:</label
                   >
@@ -117,6 +216,9 @@
                       rows='6'
                       cols='6'
                     ></textarea>
+
+                   <span id="notificacaoAutordescricao" class="text-danger notificacoesAutor"></span>
+
                   </div>
                 <div/>
               </form>

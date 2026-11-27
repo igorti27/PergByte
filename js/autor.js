@@ -1,5 +1,4 @@
 
-
 $(document).ready(function() {
             $('#lupaAutor').click(function(evento) {
                 $.ajax({
@@ -7,6 +6,7 @@ $(document).ready(function() {
                     type: 'GET',
                     data: {
                         pesquisaAutores: $('#pesquisaAutores').val()
+                        
                     },
                     beforeSend: function() {
                         $('#spinner').toggleClass('d-none'); // mostra o spinner
@@ -30,5 +30,61 @@ $(document).ready(function() {
                         // código a ser executado após a requisição, independentemente do sucesso ou falha
                     }
                 });
-            }); 
+            });
+            
+            $('#btnCadastroAutor').click(function(e){
+
+                 $.ajax({
+
+                     url: "../php/forms/cadastros/cadastroautor.php",
+                     type: 'GET',
+                     data: {
+
+                        nomeCadastroAutor: $('# nomeCadastroAutor').val(),
+                        descricaoCadastroAutor: $('#descricaoCadastroAutor').val(),
+                        nacionalidadeCadastroAutor: $('#nacionalidadeCadastroAutor').val()
+                         
+                     },
+                     beforeSend: function(){
+                        
+                        $('.notificacoesAutor').text('');
+
+                     },
+                     success: function(reposta){
+                         
+                         if(resposta.error == true){
+
+                            if(resposta.campo == "nome"){
+
+                            }
+
+                            if(resposta.campo == "descricao"){
+
+                            }
+
+                            if(resposta.campo == "nacionalidade"){
+
+                            }
+                              
+                         }else{
+
+                             Toastify.info({
+
+                                text: resposta.msg,
+                                gravity: "top",
+                                close: "true",
+                                style: {
+                
+                                    background: blue,
+                                }
+
+
+                             }).showToast();
+                         }
+                     }
+
+
+                 })
+
+            });
 });

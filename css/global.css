@@ -431,3 +431,15 @@ select{
 #spinner{
   margin-left: 50%
 }
+
+.status-atrasado {
+  color: #dc3545 !important;
+}
+
+.status-entregue {
+  color: #198754 !important;
+}
+
+.status-pendente {
+  color: #ffc107 !important;
+}

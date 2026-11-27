@@ -6,7 +6,7 @@
 <div id="layoutSidenav_content">
     <main class="container-fluid px-4 mt-5 d-flex">
       <div class="container d-flex flex-column py-5">
-         <div class="row justify-content-center mb-4 mt-5 ms-2">
+       <div class="row justify-content-center mb-4 mt-5 ms-2">
         <div class="col-md-9">
           <div class="mb-3 d-flex justify-content-sm-center gap-2">
 
@@ -107,8 +107,117 @@
             </button>
             </div>
 
+          </div>
+        </div>
+      </div>
 
 
+      
+      
+
+      <div class="modal" tabindex="-1" id="cadastrarEmprestimo">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cadastrando...</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form
+                action="#"
+                target="_self"
+                method="post"
+                id="formularioCadastroEmprestimo"
+              >
+                <div class="row g-3">
+                  <div class="col-10">
+                    <label for="leitorCadastroEmprestimo" class="form-label"
+                      >CPF do Leitor:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="leitorCadastroEmprestimo"
+                      name="leitorCadastroEmprestimo"
+                      required
+                    />
+                  </div>
+                  <div class="col-10">
+                    <label for="exemplar1CadastroEmprestimo" class="form-label"
+                      >Exemplar 01:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exemplar1CadastroEmprestimo"
+                      name="exemplar1CadastroEmprestimo"
+                      required
+                    />
+                  </div>
+                  <div class="col-10">
+                    <label for="exemplar2CadastroEmprestimo" class="form-label"
+                      >Exemplar 02:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exemplar2CadastroEmprestimo"
+                      name="exemplar2CadastroEmprestimo"
+                    />
+                  </div>
+                  <div class="col-10">
+                    <label for="exemplar3CadastroEmprestimo" class="form-label"
+                      >Exemplar 03:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exemplar3CadastroEmprestimo"
+                      name="exemplar3CadastroEmprestimo"
+                    />
+                  </div>
+                  <div class="col-10">
+                    <label for="exemplar4CadastroEmprestimo" class="form-label"
+                      >Exemplar 04:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exemplar4CadastroEmprestimo"
+                      name="exemplar4CadastroEmprestimo"
+                    />
+                  </div>
+                  <div class="col-10">
+                    <label for="exemplar5CadastroEmprestimo" class="form-label"
+                      >Exemplar 05:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="exemplar5CadastroEmprestimo"
+                      name="exemplar5CadastroEmprestimo"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button type="button" class="btn btn-primary">
+                Cadastrar Empréstimo
+              </button>
+            </div>
           </div>
         </div>
       </div>

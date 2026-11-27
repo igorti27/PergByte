@@ -732,7 +732,7 @@ function gerenciarEmprestimos(){ // Pronta e transformado v v
       </div>
 
       <!--Resultados da Pesquisa-->
-      <div class="row justify-content-center">
+      <div class="row justify-content-center ms-2">
         <div class="col-md-8 mt-3">
           <div class="card shadow-sm">
             <div
@@ -821,6 +821,9 @@ function gerenciarEmprestimos(){ // Pronta e transformado v v
                   class="bi bi-circle-fill"
                   viewBox="0 0 16 16"
                   id="circuloStatus"
+                  style = "color: #198754"
+
+                  <!-- Vermelho: #dc354 , Amarelo: #ffc107, Verde: #198754 -->
                 >
                   <circle cx="8" cy="8" r="8" />
                 </svg>

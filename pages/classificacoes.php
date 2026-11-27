@@ -87,8 +87,8 @@
                     <input type="text" class="form-control" id="nomeCadastroClassificacao" name="nomeCadastroClassificacao" required>
                   </div>
                    <div class="col-12 d-flex flex-column">
-                    <label for="cadastroDescricaoClassificacao" class="form-label">Descricao:</label>
-                    <textarea id="cadastroDescricaoClassificao" name="cadastroDescricaoClassificacao" rows="7" cols="7"></textarea>
+                    <label for="descricaoCadastroClassificacao" class="form-label">Descricao:</label>
+                    <textarea id="descricaoCadastroClassificao" name="cadastroDescricaoClassificacao" rows="7" cols="7"></textarea>
                   </div>
                </div>
               </form>

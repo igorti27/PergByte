@@ -140,4 +140,39 @@ function validarEmail($email){
 
 }
 
+function validarNome($dado){
+     
+    $nomeLimpo = trim($dado);
+
+    if(empty($nomeLimpo)){
+         return false;
+    }
+
+    if(mb_strlen($nomeLimpo,'UTF-8') < 2 || mb_strlen($nomeLimpo,'UTF-8') > 100){
+          return false;
+    }
+
+    return (bool) preg_match("/^[a-zA-ZÀ-ÿ' -]+$/u", $nomeLimpo);
+
+   // "/ /" -> indica o início e o fim do Regex;
+   // ^ $ -> Faz a verificação do início ao fim da string
+   //  a-z -> permite a exitência letras minúsculas;
+   // A-Z -> permite a exitência letras Maiúsculas;
+   // À-ÿ -> permite a exitência que permitem acentos;
+   // ' -> permite a exitência letras apóstrofo;
+   // - -> permite a exitência de hífem;
+   // u -> equivale a Unicode e permite interpretação de caracteres UTF-8
+   //   -> o espaço no colchete permite a existência de espaços em branco no meio da String,
+   // para nomes completos
+
+}
+
+function responder($error, $msg, $campo){
+      
+      echo json_encode(["error" => $error, "msg" => $msg, "campo" => $campo], JSON_UNESCAPED_UNICODE);
+      die();
+
+}
+
+
 ?>
